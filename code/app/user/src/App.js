@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <Router> 
 
-        <div className="main">
-        <div className="changingArea">
+        <div className="mainApp">
+        <div className="changingAreaApp">
           <Switch>
               <Route exact path="/" component={StartPage} />
               <Route exact path="/about" component={About} />
@@ -33,13 +33,13 @@ class App extends Component {
 
           </Switch>
         </div>
-          <div className="nav">
+          <div className="navApp">
             <Navbar />
           </div>
 
         </div>
 
-        <div className="footer">
+        <div className="footerApp">
           <Footer />
         </div>
 
