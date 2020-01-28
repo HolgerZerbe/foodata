@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import './Startpage.css'
+import './StartPage.css'
 
-class Startpage extends Component {
+class StartPage extends Component {
     render() {
         return (
-            <div>
+            <div className="startPage">
                 Hallo von Startpage.js
             </div>
         )
     }
 }
 
-export default Startpage
+export default StartPage

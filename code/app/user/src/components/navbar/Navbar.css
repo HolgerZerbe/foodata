@@ -1,1 +1,15 @@
-* {padding: 0, margin: 0 }
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    display: block;
+
+}

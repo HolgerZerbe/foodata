@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
-
 html body {
   margin: 0;
   padding: 0;
@@ -17,104 +14,9 @@ html body {
   background-repeat: no-repeat;
 }
 
-.welcome {
-  flex-grow: 1;
+.main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.welc1 {
-  font-size: 70px;
-  font-family: 'Permanent Marker', cursive;
-  font-style: italic;
-}
-
-.welc2 {
-  font-size: 110px;
-  font-family: 'Michroma', sans-serif;
-  margin: 20px 0;
-}
-
-.welc3 {
-  font-size: 40px;
-  font-family: 'Permanent Marker', cursive;
-  font-style: italic;
-}
-
-.textcolor1 {
-  background-image:linear-gradient(90deg,red,yellow);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
- }
-
- .textcolor2 {
-  background-image:linear-gradient(90deg,yellow, green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
- }
-
-.doubleD {
-  color: rgb(48,48,48);
-  /* text-shadow:rgb(51, 140, 199) 8px 8px 8px; */
-  text-shadow:yellow 8px 8px;
-
-}
-
-.trafficlightPart, .infoPart, .navPart, .scanPart, .searchPart {
-  width: 30%;
-  box-sizing: border-box;
-}
-
-.trafficlights {
-
-  width: 250px;
-  height: 620px;
-  background-color: rgb(17, 37, 17);
-  margin: 20px auto;
-  padding: 10px 0;
-  box-shadow: 5px 5px 5px 0 #333;
-}
-
-.singlelight {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin: 20px auto;
-}
-
-.navPart {
-  display: flex;
-  flex-direction: column;
-  min-height: 640px;
-}
-
-.navPartBtn {
-  display: block;
-  height: 100px;  
-  width: 50%;
-  font-size: 20px;
-  margin: 0 auto;
-  color: white;
-  background-color: rgb(53, 183, 235);
-}
-
-.navPartP {
-  text-align: center;
-  font-size: 20px;
-}
-
-.infoPart {
-  padding: 0  20px;  
-  font-size: 25px;
-}
-
-.infoPartP {
-  display: flex;
-  justify-content: space-between;
-}
-
-.infoPartP:first-child {
-  padding-bottom: 30px;
+  justify-content: space-around;
+  width: 100%;
+  height: 80%;
 }
