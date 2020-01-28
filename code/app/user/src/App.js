@@ -1,29 +1,32 @@
 import React, {Component} from 'react';
 import './App.css';
-import Welcome from './Welcome'
-import TrafficLight from './TrafficLight';
-import Info from './Info';
-import Nav from './Nav';
+import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Start from './components/Start';
 import {connect} from 'react-redux';
 
 class App extends Component {
 
   render (){
     return (
-      <div style = {{display: "flex", justifyContent: "space-between", height:"100%"}}>
-      {this.props.showWelcome? <Welcome /> : null}
-      {this.props.showTrafficLightAndInfo? <TrafficLight /> : null}
-      {this.props.showTrafficLightAndInfo? <Info /> : null}
-      <Nav />
+      <Router> 
+      <div>
+      <div>
+        <Link to="/">Start</Link>{' | '} 
+        <Link to="/products">Products</Link>
       </div>
+      <Switch>
+        <Route exact path="/" component={Start} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/productdetails/:id" component={Productdetails} />
+        <Route component={NotFound} />
+      </Switch>
+      </div>
+    </Router>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-        showWelcome: state.showWelcome,
-        showTrafficLightAndInfo: state.showTrafficLightAndInfo,
-        showScanning: state.showScanning,
-        showInput: state.showInput
+        product: state.product
 })
 export default connect(mapStateToProps, null)(App);
