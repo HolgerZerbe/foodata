@@ -10,6 +10,7 @@ import StartPage from './components/startPage/StartPage';
 import NotFound from './components/notFound/NotFound';
 import Search from './components/search/Search';
 import Scanner from './components/scanner/Scanner';
+import Results from './components/searchResults/SearchResults'
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -26,6 +27,8 @@ class App extends Component {
               <Route exact path="/search" component={Search} />
               <Route exact path="/scan" component={Scanner} />
               <Route exact path="/calc" component={CalcOffline} />
+              <Route exact path="/results" component={Results} />
+
               <Route component={NotFound} />
 
           </Switch>
@@ -35,7 +38,7 @@ class App extends Component {
         </div>
 
         <Footer />
-        
+
       </Router>
     );
   }

@@ -5,11 +5,20 @@
 
 .navbar {
     width: 30%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .link {
     display: block;
+    width: 80%;
+    height: 20%;
+    background-color: cadetblue;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2em;
+    color:black;
 
 }
