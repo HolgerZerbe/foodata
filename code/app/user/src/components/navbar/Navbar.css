@@ -4,17 +4,17 @@
 }
 
 .navbar {
-    width: 30%;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: column;    
+    height: 100%;
+    justify-content: space-evenly;
+
 }
 
 .link {
     display: block;
     width: 80%;
-    height: 20%;
+    height: 30%;
     background-color: cadetblue;
     text-decoration: none;
     text-align: center;

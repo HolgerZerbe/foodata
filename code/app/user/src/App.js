@@ -20,7 +20,7 @@ class App extends Component {
       <Router> 
 
         <div className="main">
-
+        <div className="changingArea">
           <Switch>
               <Route exact path="/" component={StartPage} />
               <Route exact path="/about" component={About} />
@@ -32,12 +32,16 @@ class App extends Component {
               <Route component={NotFound} />
 
           </Switch>
-
-          <Navbar />
+        </div>
+          <div className="nav">
+            <Navbar />
+          </div>
 
         </div>
 
-        <Footer />
+        <div className="footer">
+          <Footer />
+        </div>
 
       </Router>
     );
