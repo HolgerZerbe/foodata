@@ -1,7 +1,0 @@
-hallo World
-
-from branch "roterHeader"
-
-impressum
-
-Hallo Sonne
