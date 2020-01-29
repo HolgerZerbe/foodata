@@ -10,8 +10,8 @@ html body {
   height: 100%;
   width: 100%;
   background-image: url(marble-top-1101122.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 .mainApp {
@@ -42,4 +42,26 @@ html body {
   box-sizing: border-box;
   border: 1px solid black;
   min-height: 20%;
+}
+
+@media only screen and (max-width: 767px) {
+  .mainApp {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: none;
+
+  }
+  .changingAreaApp {
+    min-height: 70%;
+
+  }
+  .navApp {
+    width: 100%;
+    height: auto;
+  }
+
+  .footerApp {
+    height: auto;
+    width: 100%;
+  }
 }

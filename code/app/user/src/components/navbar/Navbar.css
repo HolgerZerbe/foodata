@@ -17,8 +17,23 @@
     height: 30%;
     background-color: cadetblue;
     text-decoration: none;
+    text-align: center;
     font-size: 2em;
     color:black;
     align-items:center;
     justify-content:center;
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar {
+        flex-direction: row;
+        width: 100%;
+        height: 20%;  
+    }
+    .linkNavbar {
+        width: 30%;
+        height: auto;
+        min-height: 50px;
+        font-size: 1.2em;
+    }
 }
