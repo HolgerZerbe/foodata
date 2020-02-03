@@ -1,5 +1,99 @@
 * {
     margin: 0;
-    padding: 0;
+    padding:0;
 }
 
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    color: cadetblue;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: cadetblue !important;
+}
+#footer h1 {
+	padding-left: 10px;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer  .fa{
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer  .row_links{
+    padding: 10px;
+    padding-right: 20px;
+
+    display: flex;
+    justify-content:space-around;
+}
+#footer ul.social {
+    display: flex;
+    justify-content:space-evenly;
+    
+}
+#footer .list-unstyled{
+    list-style-type: none;
+
+}
+#footer .address{
+    color: #ffffff;
+}
+#footer ul.social li{
+    padding: 3px 0;
+}
+#footer ul.social li i {
+    margin-right: 5px;
+    font-size:50px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover  i {
+	font-size:75px;
+	margin-top:-10px;
+}
+#footer ul.quick-links li {
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:20px;
+	font-weight:700px;
+}
+#footer ul.quick-links li  i{
+	margin-right: 10px;
+}
+#footer ul.quick-links li:hover  i {
+    font-weight: 700;
+}
+
+.logo img {
+    width: 500px;
+    height: 200px;
+  }
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
