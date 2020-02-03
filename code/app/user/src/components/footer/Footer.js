@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 class Footer extends Component {
     render() {
         return (
-            <div>
+    
                 <section id="footer">
                     <div className="container">
                         <div className="row row_links ">
@@ -52,7 +52,7 @@ class Footer extends Component {
                         </div>		
                     </div> 
                 </section>
-            </div>
+        
         )
     }
 }

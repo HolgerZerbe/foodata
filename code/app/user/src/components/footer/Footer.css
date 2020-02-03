@@ -5,10 +5,11 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 section .section-title {
+
     color: cadetblue;
     margin-bottom: 50px;
     text-transform: uppercase;
@@ -86,8 +87,8 @@ section .section-title {
 }
 
 .logo img {
-    width: 500px;
-    height: 200px;
+    width: auto;
+    height: 120px;
   }
 @media (max-width:767px){
 	#footer h5 {

@@ -1,38 +1,33 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
 
 app.use(express.json());
+app.use('/', express.static('public'));
 
+require('dotenv').config();
 
-// EAN als Array, da ein Produkt mehrere EAN aufgrund von 
-// Packungsgrößen oder speziellen Herstellervorgaben haben kann
+const Product = require('./Product')
 
-let products = [{ id: 1, EAN: ["4060800156525", "4711"], product:"Pepsi Max", trafficColorIndex: 0, massValue: "100 ml", calorificValue: "1 KJ / 0,3 Kcal", carbohydrates: "0,1", fat: "0,1", protein: "0,1", salt: "0,02"}]
-
-
-app.get('/product', (req, res) => {
-    return res.send({message: "Willkommen bei Foodata"});
+mongoose.connect(process.env.MONGOURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
-app.post('/product', (req, res) => {
 
-    products.push(req.body)
-    return res.send({message: "Produkt erfolgreich zugefügt"});
-});
 
-app.get('/product/:id', (req, res) => {
-
-    const found = products.filter(element => element.EAN.includes(req.params.id)) 
-    console.log(found)
-    if(found.length===1) {
-        return res.send(found);
+app.get('/product', async (req, res) => {
+    if (req.query) {
+        const product = await Product.find({'EAN':req.query.ean});
+        return res.send(res.json(product))
     } else {
-        return res.send([{ id: 0, EAN: [], product:"kein Produkt gefunden", trafficColorIndex: 3, massValue: "-", calorificValue: "- KJ / - Kcal", carbohydrates: "-", fat: "-", protein: "-", salt: "-"}])
+        return res.send({
+            message: "Willkommen bei Foodata"
+        });
     }
 });
 
-
-console.log ('Server gestartet')
+console.log('Server gestartet')
 
 
 app.listen(3001);
