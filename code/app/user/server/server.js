@@ -18,11 +18,24 @@ mongoose.connect(process.env.MONGOURL, {
 
 app.get('/product', async (req, res) => {
     if (req.query) {
-        const product = await Product.find({'EAN':req.query.ean});
+
+        const product = await Product.find({ean:{$in:req.query.ean}});
         return res.send(res.json(product))
     } else {
         return res.send({
             message: "Willkommen bei Foodata"
+        });
+    }
+});
+
+app.get('/search', async (req, res) => {
+    if (req.query) {
+
+        const product = await Product.find({productname: {$regex: req.query.q, $options: 'i'}});
+        return res.send(res.json(product))
+    } else {
+        return res.send({
+            message: "No product found"
         });
     }
 });
