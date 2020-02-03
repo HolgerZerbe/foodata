@@ -5,22 +5,22 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 20px 0;
+    padding: 0;
 }
-
+.container_footer{
+    height: 200px;
+}
 section .section-title {
-
     color: cadetblue;
-    margin-bottom: 50px;
     text-transform: uppercase;
 }
 #footer {
     background: cadetblue !important;
 }
+.features{
+    height: 10%;
+}
 #footer h1 {
-	padding-left: 10px;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
     color:#ffffff;
 }
 #footer  .fa{
@@ -30,7 +30,7 @@ section .section-title {
     -webkit-text-decoration-skip: objects;
 }
 #footer  .row_links{
-    padding: 10px;
+    padding-top: 10px;
     padding-right: 20px;
 
     display: flex;
@@ -47,7 +47,13 @@ section .section-title {
 }
 #footer .address{
     color: #ffffff;
+    height: 30%;
+
 }
+.text_addresse{
+padding-top: 5px;
+}
+
 #footer ul.social li{
     padding: 3px 0;
 }
@@ -85,13 +91,30 @@ section .section-title {
 #footer ul.quick-links li:hover  i {
     font-weight: 700;
 }
+.logo{
+    width: 500px;
+    height: 80px;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
 
-.logo img {
-    width: auto;
-    height: 120px;
+
+}
+.logo a {
+    box-sizing: border-box;
+
   }
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* margin-bottom: -50px; */
+   /*  margin-top: -8px; */
+    box-sizing: border-box;
+    
+}
 @media (max-width:767px){
-	#footer h5 {
+    #footer h1 {
     padding-left: 0;
     border-left: transparent;
     padding-bottom: 0px;
