@@ -31,7 +31,10 @@ app.get('/product', async (req, res) => {
 app.get('/search', async (req, res) => {
     if (req.query) {
 
-        const product = await Product.find({productname: {$regex: req.query.q, $options: 'i'}});
+        const product = await Product.find({$or:[{productname: {$regex: req.query.q, $options: 'i'}},
+                                            {hersteller: {$regex: req.query.q, $options: 'i'}}
+                                            ]});
+
         return res.send(res.json(product))
     } else {
         return res.send({

@@ -7,6 +7,7 @@ const products = new Schema ({
     hersteller: String,
     handelskette: Array,
     productGroup: String,
+    brennwertKCAL: Number,
     kohlenhydrate: Number,
     fett: Number,
     gesaettigte_Fettsaeuren: Number,
