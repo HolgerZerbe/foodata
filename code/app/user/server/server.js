@@ -72,6 +72,38 @@ app.get('/search', async (req, res) => {
     }
 });
 
+
+app.get('/searchId', async (req, res) => {
+    if (req.query) {
+    
+        const foundproduct = await Product.find({_id: req.query.id});
+
+        if (foundproduct.length === 1) {
+
+            let product = {
+                            hersteller: foundproduct[0].hersteller,
+                            productname: foundproduct[0].productname,
+                            productGroup: foundproduct[0].productGroup,
+                            brennwertKCAL: foundproduct[0].brennwertKCAL,
+                            kohlenhydrate: foundproduct[0].kohlenhydrate,
+                            fett: foundproduct[0].fett,
+                            gesaettigte_Fettsaeuren: foundproduct[0].gesaettigte_Fettsaeuren,
+                            natrium: foundproduct[0].natrium,
+                            protein: foundproduct[0].protein,
+                            ballaststoffe: foundproduct[0].ballaststoffe,
+                            obstGemueseNuesseAnteil: foundproduct[0].obstGemueseNuesseAnteil
+            }
+
+            return res.send({error: 0, product: product})
+        }
+        else {
+            return res.send({error: 1000,
+                message: "product not found"
+            });
+    }
+    }
+});
+
 console.log('Server gestartet')
 
 
