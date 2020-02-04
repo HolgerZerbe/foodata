@@ -12,6 +12,7 @@ html body {
   background-image: url(marble-top-1101122.jpg);
   background-size: contain;
   background-repeat: repeat;
+  box-sizing: border-box;
 
 }
 
@@ -27,21 +28,15 @@ html body {
   padding: 10px;
   height: 100%;
   align-items: stretch;
-  border: 1px solid black;
-
-
 }
 
 .changingAreaApp {
   box-sizing: border-box;
-  min-width: 70%;
-  border: 1px solid black;
-
+  max-width: 70%;
 }
 
 .footerApp {
   box-sizing: border-box;
-  border: 1px solid black;
   min-height: 20%;
 }
 
@@ -54,6 +49,7 @@ html body {
   }
   .changingAreaApp {
     min-height: 70%;
+    max-width: 100%;
 
   }
   .navApp {
