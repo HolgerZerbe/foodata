@@ -1,14 +1,25 @@
-import React, { Component } from 'react'
-import './Scanner.css'
+import React, { useState } from "react";
+import ScannerCamera from "./ScannerCamera";
 
-class Scanner extends Component {
-    render() {
-        return (
-            <div>
-                Hallo von Scanner.js
-            </div>
-        )
-    }
+function Scanner() {
+  const [camera, setCamera] = useState(false);
+  const [result, setResult] = useState(null);
+
+  const onDetected = result => {
+    setResult(result);
+  };
+
+  return (
+    <div className="ScannerApp">
+      <p>{result ? result : "Scanning..."}</p>
+      <button onClick={() => setCamera(!camera)}>
+        {camera ? "Stop" : "Start"}
+      </button>
+      <div className="container">
+        {camera && <ScannerCamera onDetected={onDetected} />}
+      </div>
+    </div>
+  );
 }
 
-export default Scanner
+export default Scanner;
