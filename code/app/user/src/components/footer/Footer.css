@@ -1,3 +1,4 @@
+
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
     padding: 0;
@@ -5,26 +6,20 @@ section {
 .container_footer{
     height: 200px;
 }
-
+section .section-title {
+    color: cadetblue;
+    text-transform: uppercase;
+}
 #footer {
-    background: rgb(113, 114, 114) !important;
-    max-width: 98%;
-    margin: 0 auto;
-    border-radius: 10px;
+    background: cadetblue !important;
 }
 .features{
     height: 10%;
 }
-.features a {
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
 #footer h1 {
     color:#ffffff;
 }
 #footer  .fa{
-    /* font-family: Arial, Helvetica, sans-serif; */
     color: #ffffff;
     text-decoration: none !important;
     background-color: transparent;
