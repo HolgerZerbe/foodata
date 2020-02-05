@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import './Card.css'
 
 
-class Card extends Component {
-    render() {
+function Card (props){
         return (
-            <div>
-                Hallo von Card.js
+            <div className="sep">
+                    <div className="image-hover img-opacity">
+                        <img src={props.img_ean} className="img-1"/>
+                        <img src={props.img} className="img-2"/>
+                    </div>
+                    <h2>{props.name}</h2>
             </div>
         )
-    }
 }
-
-export default Card
+export default Card;
