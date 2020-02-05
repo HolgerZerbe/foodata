@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import ScannerCamera from "./ScannerCamera";
 
-function Scanner() {
-  const [camera, setCamera] = useState(false);
-  const [result, setResult] = useState(null);
+class Scanner extends Component {
+  state = {
+  camera : false,
+  result : null
+  }
 
-  const onDetected = result => {
-    setResult(result);
+  onDetected = result => {
+    this.setState({result: result})
   };
 
+  componentDidMount(){
+    this.setState({camera : !this.camera})
+  };
+  componentWillUnmount(){
+    this.setState({camera : !this.camera})
+
+  };
+  render () {
   return (
     <div className="ScannerApp">
-      <p>{result ? result : "Scanning..."}</p>
-      <button onClick={() => setCamera(!camera)}>
-        {camera ? "Stop" : "Start"}
-      </button>
+      <p>{this.state.result ? this.state.result : "Scanning..."}</p>
       <div className="container">
-        {camera && <ScannerCamera onDetected={onDetected} />}
+        {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
       </div>
     </div>
   );
+}
 }
 
 export default Scanner;
