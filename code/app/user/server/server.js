@@ -24,7 +24,7 @@ app.get('/product', async (req, res) => {
         
         if (foundproduct.length === 0) {
             return res.send({error: 1001,
-                message: "product not found"
+                message: "Produkt nicht gefunden"
             });
         }
         else if (foundproduct.length === 1) {
@@ -44,6 +44,9 @@ app.get('/product', async (req, res) => {
 
         return res.send({error : 0, product: product})
         }
+        else { return res.send({error: 1099, message: "Fehler in der Datenbank"})}
+        
+
     } 
     
 });
@@ -66,7 +69,7 @@ app.get('/search', async (req, res) => {
         }
         else {
             return res.send({error: 1001,
-                message: "No product found"
+                message: "Kein Produkt gefunden"
             });
     }
     }
@@ -98,7 +101,7 @@ app.get('/searchId', async (req, res) => {
         }
         else {
             return res.send({error: 1000,
-                message: "product not found"
+                message: "Produkt nicht gefunden"
             });
     }
     }
