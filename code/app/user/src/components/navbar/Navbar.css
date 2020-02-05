@@ -24,6 +24,14 @@
     justify-content:center;
     margin: 0 auto;
     border-radius: 10px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.linkNavbar:hover {
+    color: goldenrod;
+    text-shadow: 3px 3px 5px black;
+    box-shadow: 10px 10px 5px goldenrod ;
+
 }
 
 @media only screen and (max-width: 767px) {

@@ -11,11 +11,17 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: cadetblue !important;
+    background: rgb(113, 114, 114) !important;
+
 }
 .features{
     height: 10%;
 }
+
+.features a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #footer h1 {
     color:#ffffff;
 }
