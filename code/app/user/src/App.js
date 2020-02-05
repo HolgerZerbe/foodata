@@ -13,6 +13,7 @@ import Scanner from './components/scanner/Scanner';
 import Results from './components/searchResults/SearchResults'
 import {connect} from 'react-redux';
 
+
 class App extends Component {
 
   render (){

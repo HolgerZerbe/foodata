@@ -1,10 +1,13 @@
 .sep  {
     text-align: center;
     margin: 20px;
-    width: 200px;
+    width: 250px;
    /*  border: black solid 2px; */
 }
 
+.sep h2{
+    margin-top: 20px;
+}
 .sep .image-hover {
     display: inline-block; 
     margin: 0px auto;
@@ -12,7 +15,11 @@
 
 }
 
-
+.font_icons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
 .image-hover {
     margin: 10px;
     box-sizing: border-box;
@@ -47,11 +54,11 @@
 }
 
 .img-opacity .img-1 {
-    opacity: 1
+    opacity:1
 }
 
 .img-opacity .img-2 {
-    opacity: 45%
+    opacity:0;
 }
 
 .img-opacity:hover .img-1 {
@@ -77,4 +84,9 @@
     -ms-transition: all 1.2s ease-in-out;
     -o-transition: all 1.2s ease-in-out;
 }
-
+.font_icons  .icon {
+    transition: 0.7s;
+  }
+.font_icons .icon:hover{
+  transform: rotateY(360deg);
+}
