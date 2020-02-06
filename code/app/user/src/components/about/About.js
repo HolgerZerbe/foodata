@@ -49,6 +49,26 @@ import Card from "../card/Card"
                     linkedin={element.linkedin}
                     />)}
                 </div>
+                <div className="about_text">
+                    <h2>About Foodata </h2><br/>
+                        <p>
+                            <strong>Foodata – Deine Lebenmittel-Ampel-App</strong>
+                            <br/>is a web application which gives you the opportunity to scan products and show their nurtiscore,so you can easily decide, which food can be part of your healty eating.<br/>
+                            Users have also the opportunity to find products by productname 
+                            or to calculate the nutriscore by themselves if they ar not online.<br/>
+                            And of course this app is responsive for using it on your phone.<br/><br/>
+                            For this school project, the following technologies were used:<br/>
+                            <ul>
+                                <li>- ReactJS with the Redux.</li>
+                                <li>- JavaScript including HTML and CSS</li>
+                                <li>- NodeJs and a Mongoose Schema to interacting with the MongoDB database</li>
+                                <li>- NodeJS Express</li>
+                                <li>- Thunk middleware</li>
+                                <li>- Router and Switch to switch between components</li>
+                                <li>- FETCH to perform HTML requests.</li>
+                            </ul>
+                        </p>
+                </div>
             </div>
         )
     }

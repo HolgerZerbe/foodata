@@ -1,7 +1,9 @@
 .about_div {
-    width: 100%;
+    /* width: auto;
     height: 100%;
-    margin: 0;
+    margin: 0; */
+    display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
 }
 
@@ -16,4 +18,23 @@
     margin: 0 auto; 
     display: flex;
     justify-content: center;
+    /* border: black solid  1px; */
 }
+
+.about_text{
+    width: 60%;
+    margin :0 auto;
+    text-align: left;
+}
+.about_text ul li{
+    list-style-type: none;
+}
+@media only screen and (max-width: 767px) {
+    .photo_div{
+        flex-wrap: wrap;
+    }
+    .about_div {
+        overflow: scroll;
+
+    }
+  }
