@@ -22,7 +22,7 @@ class Scanner extends Component {
   return (
     <div className="ScannerApp">
       <p>{this.state.result ? this.state.result : "Scanning..."}</p>
-      <div className="container">
+      <div className="containerScanner">
         {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
       </div>
     </div>

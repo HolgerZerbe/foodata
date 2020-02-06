@@ -48,6 +48,7 @@ html body {
   }
   .changingAreaApp {
     min-height: 70%;
+    width: 100%;
     max-width: 100%;
 
   }

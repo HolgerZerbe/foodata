@@ -1,5 +1,5 @@
 .about_div {
-    width: auto;
+    width: 100%;
     height: 100%;
     margin: 0;
     box-sizing: border-box;
@@ -16,5 +16,4 @@
     margin: 0 auto; 
     display: flex;
     justify-content: center;
-    /* border: black solid  1px; */
 }
