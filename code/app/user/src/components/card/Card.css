@@ -8,6 +8,11 @@
 .sep h2{
     margin-top: 20px;
 }
+
+.sep h5{
+    padding-top: 5px;
+    color: rgb(167, 173, 173);;
+}
 .sep .image-hover {
     display: inline-block; 
     margin: 0px auto;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Card.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt } from '@fortawesome/fontawesome-free-solid'
@@ -8,10 +8,11 @@ function Card (props){
         return (
             <div className="sep">
                     <div className="image-hover img-opacity">
-                        <img src={props.img_ean} className="img-1"/>
-                        <img src={props.img} className="img-2"/>
+                        <img src={props.img_ean} className="img-1" alt="EAN"/>
+                        <img src={props.img} className="img-2" alt="Person"/>
                     </div>
                     <h2>{props.name}</h2>
+                    <h5>{props.description}</h5>
                     <div className="font_icons">
                         <a className="icon" href={props.github}> <FontAwesomeIcon icon={faGithub} size="3x"color="black" /></a>
                         <a className="icon" href={props.linkedin}> <FontAwesomeIcon icon={faLinkedin} size="3x" color="black"  /></a>
