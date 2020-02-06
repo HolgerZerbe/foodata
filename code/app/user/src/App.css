@@ -22,15 +22,16 @@ html body {
 }
 .navApp {
   box-sizing: border-box;
-  width: 30%;
+  width: 28%;
   padding: 10px;
   height: 100%;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 .changingAreaApp {
   box-sizing: border-box;
-  max-width: 70%;
+  width: 72%;
+  max-width: 72%;
 }
 
 .footerApp {

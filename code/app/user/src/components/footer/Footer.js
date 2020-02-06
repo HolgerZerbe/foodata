@@ -13,7 +13,7 @@ class Footer extends Component {
                     <div className="features">
                             <h1>Features</h1>
                             <ul className="list-unstyled quick-links">
-                                <li><Link  className="fa" to="/about">>> Home</Link></li>
+                                <li><Link  className="fa" to="/">>> Home</Link></li>
                                 <li><Link  className="fa" to="/about">>> About</Link></li>
                             </ul>
                     </div>
