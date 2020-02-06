@@ -15,19 +15,17 @@ html body {
 }
 
 .mainApp {
-  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   width: 100%;
-  min-height: 80%;
+  height: 80%;
 }
 .navApp {
   box-sizing: border-box;
   width: 28%;
   padding: 10px;
-  min-height: 80%;
-  max-height: 800px;
-  align-items: stretch;
+  height: 100%;
+  /* align-items: stretch; */
 }
 
 .changingAreaApp {
@@ -51,7 +49,10 @@ html body {
   }
   .changingAreaApp {
     min-height: 70%;
+<<<<<<< HEAD
+=======
     height: auto;
+>>>>>>> remotes/origin/about_1
     width: 100%;
     max-width: 100%;
 

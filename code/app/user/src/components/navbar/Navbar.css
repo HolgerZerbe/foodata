@@ -1,14 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .navbar {
     display: flex;
     flex-direction: column;    
     height: 100%;
     justify-content: space-evenly;
-
 }
 
 .linkNavbar {
@@ -31,10 +25,10 @@
     color: goldenrod;
     text-shadow: 3px 3px 5px black;
     box-shadow: 10px 10px 5px goldenrod ;
-
 }
 
 @media only screen and (max-width: 767px) {
+    
     .navbar {
         flex-direction: row;
         width: 100%;

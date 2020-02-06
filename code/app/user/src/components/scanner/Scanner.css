@@ -12,15 +12,13 @@
   video {
     width: 400px;
     height: 300px;
-    display: block;
-    margin: 0 auto;
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    left: -400px; */
+    left: -400px;
   }
   
-  /* #interactive.viewport canvas.drawingBuffer,
+  #interactive.viewport canvas.drawingBuffer,
   video.drawingBuffer {
     width: 400px;
     height: 300px;
-  } */
+  } 
