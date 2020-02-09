@@ -1,8 +1,11 @@
 export const loadProduct = (EAN) => async dispatch => {
 
-    const url = 'product/'+EAN
+    const url = '/product?ean='+EAN
     const result = await fetch(url);
-    const data = await result.json(); 
+    const data = await result.json();
+    
+    console.log(result)
+    console.log(data)
 
     dispatch({
         type: 'LOAD_PRODUCT',
@@ -10,32 +13,32 @@ export const loadProduct = (EAN) => async dispatch => {
     })
 }
 
-// export const deleteComment = (id) => async dispatch => {
+export const searchProduct = (string) => async dispatch => {
 
-//     const url = 'comments/'+id
-//     const result = await fetch(url, {
-//         method: 'DELETE'});
-//     const data = await result.json(); 
+    const url = '/search?q='+string
+    const result = await fetch(url);
+    const data = await result.json();
     
-//     dispatch({
-//         type: 'DELETE_COMMENT',
-//         value: data
-//     })
-// }
-  
-// export const postComment = (body) => async dispatch => {
+    console.log(result)
+    console.log(data)
 
-//     const result = await fetch('comments', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type':'application/json'
-//           },
-//         body: JSON.stringify(body)
-//     });
-//     const data = await result.json(); 
+    dispatch({
+        type: 'SEARCH_PRODUCT',
+        value: data
+    })
+}
+
+export const searchById = (id) => async dispatch => {
+
+    const url = '/searchId?id='+id
+    const result = await fetch(url);
+    const data = await result.json();
     
-//     dispatch({
-//         type: 'POST_COMMENT',
-//         value: data
-//     })
-// }
+    console.log(result)
+    console.log(data)
+
+    dispatch({
+        type: 'SEARCH_BY_ID',
+        value: data
+    })
+}

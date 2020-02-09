@@ -1,5 +1,5 @@
 {
-  "name": "halloworld",
+  "name": "foodata",
   "version": "0.1.0",
   "proxy": "http://localhost:3001",
   "private": true,

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import ScannerCamera from "./ScannerCamera";
+import {connect} from 'react-redux';
+import {loadProduct} from '../../actions';
 
 class Scanner extends Component {
   state = {
-  camera : false,
-  result : null
+  camera : false
   }
 
   onDetected = result => {
-    this.setState({result: result})
+    this.props.loadProduct(result)
   };
 
   componentDidMount(){
@@ -19,9 +20,11 @@ class Scanner extends Component {
 
   };
   render () {
+    console.log(this.props)
+
   return (
     <div className="ScannerApp">
-      <p>{this.state.result ? this.state.result : "Scanning..."}</p>
+      <p>{(this.props.error===0) ? (this.props.product.productname) : "Scanning..."}</p>
       <div className="containerScanner">
         {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
       </div>
@@ -30,4 +33,9 @@ class Scanner extends Component {
 }
 }
 
-export default Scanner;
+const mapStateToProps = (state) => ({
+  product: state.product,
+  error: state.error
+})
+
+export default connect(mapStateToProps, {loadProduct})(Scanner);
