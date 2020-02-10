@@ -70,7 +70,8 @@ const ScannerCamera = props => {
     // If you do not specify a target,
     // QuaggaJS would look for an element that matches
     // the CSS selector #interactive.viewport
-    <div id="interactive" className="viewport" />
+    <div id="interactive" className="viewport" >
+    </div>
   );
 };
 

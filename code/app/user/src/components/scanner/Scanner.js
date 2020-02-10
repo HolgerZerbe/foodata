@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScannerCamera from "./ScannerCamera";
+import './Scanner.css'; 
 
 class Scanner extends Component {
   state = {
@@ -21,7 +22,9 @@ class Scanner extends Component {
   render () {
   return (
     <div className="ScannerApp">
-      <p>{this.state.result ? this.state.result : "Scanning..."}</p>
+      <div className="result">
+        <p>{this.state.result ? this.state.result : "Scanning..."}</p>
+      </div>
       <div className="containerScanner">
         {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
       </div>
