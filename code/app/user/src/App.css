@@ -19,14 +19,14 @@ html body {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  height: 80%;
   min-height: 80%;
 }
 .navApp {
   box-sizing: border-box;
   width: 28%;
-  padding: 10px;
-  min-height: 80%;
-  max-height: 800px;
+  /* padding: 10px; */
+ /*  min-height: 80%; */
   align-items: stretch;
 }
 
@@ -39,6 +39,7 @@ html body {
 .footerApp {
   box-sizing: border-box;
   min-height: 20%;
+  background: rgb(113, 114, 114) !important;
 }
 
 @media only screen and (max-width: 767px) {
