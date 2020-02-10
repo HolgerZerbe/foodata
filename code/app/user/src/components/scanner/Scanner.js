@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ScannerCamera from "./ScannerCamera";
 import {connect} from 'react-redux';
 import {loadProduct} from '../../actions';
+import './Scanner.css'
 
 class Scanner extends Component {
   state = {
