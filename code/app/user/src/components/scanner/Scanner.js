@@ -25,7 +25,7 @@ class Scanner extends Component {
 
   return (
     <div className="ScannerApp">
-      <p>{(this.props.error===0) ? (this.props.product.productname) : "Scanning..."}</p>
+      <p>{(this.props.error===0) ? <>{this.props.product.hersteller} {this.props.product.productname} </> : "Scanning..."}</p>
       <div className="containerScanner">
         {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
       </div>

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Redirect } from 'react-router'
+
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
@@ -16,9 +18,18 @@ import {connect} from 'react-redux';
 
 class App extends Component {
 
+
+
   render (){
+    
+    console.log("this.props.productFound = ")
+    console.log(this.props.productFound)
+    console.log(this.props.product)
+    
     return (
       <Router> 
+        {this.props.productFound === 1 ?
+            <Redirect to="/results" /> : null}
 
         <div className="mainApp">
         <div className="changingAreaApp">
@@ -29,7 +40,6 @@ class App extends Component {
               <Route exact path="/scan" component={Scanner} />
               <Route exact path="/calc" component={CalcOffline} />
               <Route exact path="/results" component={Results} />
-
               <Route component={NotFound} />
 
           </Switch>
