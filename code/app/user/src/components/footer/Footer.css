@@ -135,6 +135,8 @@ padding-top: 5px;
     #footer .logo{
 
         order: 1;
+        width: 100%;
+        margin: 0 50px;
     }
     #footer .features{
         order: 2;
