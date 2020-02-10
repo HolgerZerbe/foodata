@@ -42,3 +42,11 @@ export const searchById = (id) => async dispatch => {
         value: data
     })
 }
+
+export const setProductFoundToFalse = () => dispatch =>{
+
+    dispatch({
+        type: 'SET_PRODUCTFOUND_TO_FALSE',
+        value: false
+    })
+}

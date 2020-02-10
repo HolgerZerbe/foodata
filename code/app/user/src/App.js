@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Link, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Redirect } from 'react-router'
 
 import Navbar from './components/navbar/Navbar';
@@ -19,16 +19,11 @@ import {connect} from 'react-redux';
 class App extends Component {
 
 
-
   render (){
-    
-    console.log("this.props.productFound = ")
-    console.log(this.props.productFound)
-    console.log(this.props.product)
-    
+
     return (
       <Router> 
-        {this.props.productFound === 1 ?
+        {this.props.productFound ?
             <Redirect to="/results" /> : null}
 
         <div className="mainApp">
@@ -60,6 +55,9 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-        product: state.product
+        product: state.product,
+        productFound: state.productFound,
+        error: state.error,
+        message: state.message
 })
 export default connect(mapStateToProps, null)(App);

@@ -1,6 +1,6 @@
-    const initialState = {
-        product:{ id: 0, EAN: [], productname: null, hersteller : null, handelskette : null, productGroup: null, brennwertKCAL: null, kohlenhydrate : null, fett: null, gesaettigte_Fettsaeuren: null, natrium: null , protein: null, ballaststoffe: null,obstGemueseNuesseAnteil: null },
-        productFound: 0,
+const initialState = {
+        productFound: false,
+        product:{ id: 0, EAN: [], productname: null, hersteller : null, handelskette : null, productGroup: null, brennwertKCAL: null, kohlenhydrate : null, fett: null, gesaettigte_Fettsaeuren: null, natrium: null , protein: null, ballaststoffe: null, obstGemueseNuesseAnteil: null },
         arrayOfFoundProducts: [],
         error: null,
         message: null 
@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
         return {product: action.value.product,
                 error: action.value.error,
                 message: action.value.message,
-                productFound: 1
+                productFound: true
         }
 
         case 'SEARCH_PRODUCT':
@@ -30,9 +30,12 @@ const reducer = (state = initialState, action) => {
             return {product: action.value.product,
                     error: action.value.error,
                     message: action.value.message,
-                    productFound: 1
+                    productFound: true
             }
             
+        case 'SET_PRODUCTFOUND_TO_FALSE':
+            return {productFound: action.value}
+
         default: 
             return state;
     }
