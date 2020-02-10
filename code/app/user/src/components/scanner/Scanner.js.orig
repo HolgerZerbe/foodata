@@ -1,0 +1,51 @@
+import React, { Component } from "react";
+import ScannerCamera from "./ScannerCamera";
+<<<<<<< HEAD
+import {connect} from 'react-redux';
+import {loadProduct} from '../../actions';
+=======
+import './Scanner.css'; 
+>>>>>>> remotes/origin/scanner_style
+
+class Scanner extends Component {
+  state = {
+  camera : false
+  }
+
+  onDetected = result => {
+    this.props.loadProduct(result)
+  };
+
+  componentDidMount(){
+    this.setState({camera : !this.camera})
+  };
+  componentWillUnmount(){
+    this.setState({camera : !this.camera})
+
+  };
+  render () {
+    console.log(this.props)
+
+  return (
+    <div className="ScannerApp">
+<<<<<<< HEAD
+      <p>{(this.props.error===0) ? (this.props.product.productname) : "Scanning..."}</p>
+=======
+      <div className="result">
+        <p>{this.state.result ? this.state.result : "Scanning..."}</p>
+      </div>
+>>>>>>> remotes/origin/scanner_style
+      <div className="containerScanner">
+        {this.state.camera && <ScannerCamera onDetected={this.onDetected} />}
+      </div>
+    </div>
+  );
+}
+}
+
+const mapStateToProps = (state) => ({
+  product: state.product,
+  error: state.error
+})
+
+export default connect(mapStateToProps, {loadProduct})(Scanner);
