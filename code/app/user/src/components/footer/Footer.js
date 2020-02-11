@@ -18,7 +18,7 @@ class Footer extends Component {
                             </ul>
                     </div>
                     <div className="logo">
-                        <Link to="/about">
+                        <Link to="/">
                             <img src="../foodata_logo_version_1.png" alt="logo" />
                         </Link>
                     </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ScannerCamera from "./ScannerCamera";
 import {connect} from 'react-redux';
 import {loadProduct} from '../../actions';
+import Quagga from 'quagga'
 import './Scanner.css'
 
 class Scanner extends Component {
@@ -17,7 +18,8 @@ class Scanner extends Component {
     this.setState({camera : !this.camera})
   };
   componentWillUnmount(){
-    this.setState({camera : !this.camera})
+    this.setState({camera : !this.camera});
+    Quagga.stop();
 
   };
   render () {
