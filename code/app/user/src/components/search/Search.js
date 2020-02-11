@@ -5,7 +5,6 @@ import {searchProduct, searchById, setProductFoundToFalse, emptyArrayOfFoundProd
 
 class Search extends Component {
 
-
     componentWillUnmount() {
         this.props.emptyArrayOfFoundProducts()
     }
