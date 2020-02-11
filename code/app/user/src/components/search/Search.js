@@ -15,8 +15,9 @@ class Search extends Component {
         return (
             <>  
                 <div className="inputSearch">
-                    <input type="text" placeholder="search for..." onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : null)}></input>
+                    <input type="text" placeholder="Geben Sie bis zu drei Suchbegriffe ein" onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : null)}></input>
                 </div>
+                <div className="tableSearch">
                 <table>
                     <thead>
                         <tr><td>Hersteller</td><td>Produktname</td></tr>
@@ -25,6 +26,7 @@ class Search extends Component {
                         {this.props.arrayOfFoundProducts && this.props.arrayOfFoundProducts.map((elem, index) => <tr onClick={() => this.props.searchById(elem.id)}key={index}><td>{elem.hersteller}</td><td>{elem.productname}</td></tr>)}
                     </tbody>
                 </table>
+                </div>
             </>
         )
     }

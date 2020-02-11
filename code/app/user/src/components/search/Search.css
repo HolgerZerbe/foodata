@@ -1,4 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
+.inputSearch {
+    text-align: center;
+}
+
+.inputSearch input{
+    width: 50%;
+    margin: 50px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.tableSearch {
+    width: 100%;
+}
+
+.tableSearch table {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    font-size: 1.2em;
 }
