@@ -36,8 +36,12 @@ const reducer = (state = initialState, action) => {
                     productFound: true
             }
             
-        case 'SET_PRODUCTFOUND_TO_FALSE':
-            return {productFound: action.value}
+            case 'SET_PRODUCTFOUND_TO_FALSE':
+            return {productFound: action.value}        
+                
+
+            case 'EMPTY_ARRAYOFFOUNDPRODUCTS':
+            return {arrayOfFoundProducts: action.value}
 
         default: 
             return state;

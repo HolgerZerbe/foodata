@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import './Search.css'
-import {searchProduct, searchById, setProductFoundToFalse} from '../../actions'
+import {searchProduct, searchById, setProductFoundToFalse, emptyArrayOfFoundProducts} from '../../actions'
 
 class Search extends Component {
 
 
     componentWillUnmount() {
-        // this.props.setProductFoundToFalse()
+        this.props.emptyArrayOfFoundProducts()
     }
 
     render() {
@@ -15,7 +15,7 @@ class Search extends Component {
         return (
             <>  
                 <div className="inputSearch">
-                    <input type="text" placeholder="Geben Sie bis zu drei Suchbegriffe ein" onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : null)}></input>
+                    <input type="text" placeholder="Geben Sie bis zu drei Suchbegriffe ein" onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : this.props.emptyArrayOfFoundProducts())}></input>
                 </div>
                 <div className="tableSearch">
                 <table>
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {searchProduct, searchById, setProductFoundToFalse})(Search)
+export default connect(mapStateToProps, {searchProduct, searchById, setProductFoundToFalse, emptyArrayOfFoundProducts})(Search)

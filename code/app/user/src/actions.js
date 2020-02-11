@@ -50,3 +50,11 @@ export const setProductFoundToFalse = () => dispatch =>{
         value: false
     })
 }
+
+export const emptyArrayOfFoundProducts = () => dispatch =>{
+
+    dispatch({
+        type: 'EMPTY_ARRAYOFFOUNDPRODUCTS',
+        value: []
+    })
+}
