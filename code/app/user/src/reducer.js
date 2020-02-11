@@ -2,7 +2,7 @@ const initialState = {
         productFound: false,
         product:{ id: 0, EAN: [], productname: null, hersteller : null, handelskette : null, productGroup: null, brennwertKCAL: null, kohlenhydrate : null, fett: null, gesaettigte_Fettsaeuren: null, natrium: null , protein: null, ballaststoffe: null, obstGemueseNuesseAnteil: null },
         arrayOfFoundProducts: [],
-        error: null,
+        error: 0,
         message: null 
 }
 
