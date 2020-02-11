@@ -54,9 +54,31 @@ app.get('/product', async (req, res) => {
 app.get('/search', async (req, res) => {
     if (req.query) {
     
-        const foundproducts = await Product.find({$or:[{productname: {$regex: req.query.q, $options: 'i'}},
-                                            {hersteller: {$regex: req.query.q, $options: 'i'}}
-                                            ]});
+        const allReqQueryQ = req.query.q.split(' ');
+        let foundproducts=[]
+
+        if (allReqQueryQ.length===1) {
+            foundproducts = await Product.find({$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+                                                {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
+                                                ]});
+                                        }
+        else if (allReqQueryQ.length===2) {
+            foundproducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+                                                {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
+                                                ]}, {$or:[{productname: {$regex: allReqQueryQ[1], $options: 'i'}},
+                                                {hersteller: {$regex: allReqQueryQ[1], $options: 'i'}}
+                                                ]}]});
+        }
+        else {
+            foundproducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+            {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
+            ]}, {$or:[{productname: {$regex: allReqQueryQ[1], $options: 'i'}},
+            {hersteller: {$regex: allReqQueryQ[1], $options: 'i'}},
+            {hersteller: {$regex: allReqQueryQ[1], $options: 'i'}}
+            ]}, {$or:[{productname: {$regex: allReqQueryQ[2], $options: 'i'}},
+            {hersteller: {$regex: allReqQueryQ[2], $options: 'i'}}
+            ]}]});
+        }
 
         if (foundproducts.length>0) {
 
