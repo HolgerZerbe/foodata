@@ -2,18 +2,17 @@ import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Redirect } from 'react-router'
+import {connect} from 'react-redux';
 
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
-
 import CalcOffline from './components/calcOffline/CalcOffline';
 import StartPage from './components/startPage/StartPage';
 import NotFound from './components/notFound/NotFound';
 import Search from './components/search/Search';
 import Scanner from './components/scanner/Scanner';
 import Results from './components/searchResults/SearchResults'
-import {connect} from 'react-redux';
 
 
 class App extends Component {

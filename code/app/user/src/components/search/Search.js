@@ -5,18 +5,6 @@ import {searchProduct, searchById, setProductFoundToFalse} from '../../actions'
 
 class Search extends Component {
 
-    state = {searchTerm:""}
-    
-    searchProduct = (input) => {
-        if (this.state.searchTerm.length>3) {
-    
-            this.props.searchProduct(this.state.searchTerm)
-        }
-    
-        this.setState({
-            searchTerm : input
-        })
-    }
 
     componentWillUnmount() {
         this.props.setProductFoundToFalse()
@@ -27,7 +15,7 @@ class Search extends Component {
         return (
             <>  
                 <div>
-                    <input type="text" placeholder="search for..." onChange={(e) => this.searchProduct(e.target.value)}></input>
+                    <input type="text" placeholder="search for..." onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : null)}></input>
                 </div>
                 {this.props.error===0 && this.props.arrayOfFoundProducts.map((elem, index) => <div key={index}>{elem.hersteller} {elem.productname}</div>)}
             </>

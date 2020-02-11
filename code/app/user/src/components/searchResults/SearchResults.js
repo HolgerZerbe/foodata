@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './SearchResults.css';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 import {setProductFoundToFalse} from '../../actions';
 
 
@@ -25,7 +26,7 @@ class SearchResults extends Component {
                 <p>Eiweiß: {this.props.product.protein}</p>
                 <p>Ballaststoffe: {this.props.product.ballaststoffe}</p>
                 <p>Anteil Obst / Gemüse / Nüsse: {this.props.product.obstGemueseNuesseAnteil}</p>
-            </div> : <div style={{margin: "50px"}}><p>Fehlernummer: {this.props.error}</p><p>Fehlermeldung: {this.props.message}</p></div>}
+            </div> : <div style={{margin: "50px"}}><ErrorMessage fehlernummer={this.props.error} fehlermeldung={this.props.message} /></div>}
         </>
         )
     }
