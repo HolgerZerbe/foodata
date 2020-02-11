@@ -8,9 +8,9 @@ class Scanner extends Component {
   state = {
   camera : false
   }
-
-  onDetected = result => {
-    this.props.loadProduct(result)
+   onDetected = result => {
+     this.props.loadProduct(result)
+     new Audio('../beep_supermarket_checkout_sound.mp3').play();
   };
 
   componentDidMount(){
