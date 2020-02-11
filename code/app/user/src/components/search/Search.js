@@ -7,17 +7,24 @@ class Search extends Component {
 
 
     componentWillUnmount() {
-        this.props.setProductFoundToFalse()
+        // this.props.setProductFoundToFalse()
     }
 
     render() {
 
         return (
             <>  
-                <div>
+                <div className="inputSearch">
                     <input type="text" placeholder="search for..." onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : null)}></input>
                 </div>
-                {this.props.error===0 && this.props.arrayOfFoundProducts.map((elem, index) => <div key={index}>{elem.hersteller} {elem.productname}</div>)}
+                <table>
+                    <thead>
+                        <tr><td>Hersteller</td><td>Produktname</td></tr>
+                    </thead>
+                    <tbody>
+                        {this.props.arrayOfFoundProducts && this.props.arrayOfFoundProducts.map((elem, index) => <tr onClick={() => this.props.searchById(elem.id)}key={index}><td>{elem.hersteller}</td><td>{elem.productname}</td></tr>)}
+                    </tbody>
+                </table>
             </>
         )
     }

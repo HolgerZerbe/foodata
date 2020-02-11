@@ -15,6 +15,7 @@ const reducer = (state = initialState, action) => {
         return {product: action.value.product,
                 error: action.value.error,
                 message: action.value.message,
+                arrayOfFoundProducts:[],
                 productFound: true
         }
 
@@ -31,6 +32,7 @@ const reducer = (state = initialState, action) => {
             return {product: action.value.product,
                     error: action.value.error,
                     message: action.value.message,
+                    arrayOfFoundProducts:[],
                     productFound: true
             }
             
