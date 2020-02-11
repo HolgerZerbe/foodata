@@ -69,7 +69,8 @@ app.get('/search', async (req, res) => {
         }
         else {
             return res.send({error: 1001,
-                message: "Kein Produkt gefunden"
+                message: "Kein Produkt gefunden",
+                products: []
             });
     }
     }

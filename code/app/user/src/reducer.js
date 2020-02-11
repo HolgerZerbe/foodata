@@ -23,6 +23,7 @@ const reducer = (state = initialState, action) => {
         return {arrayOfFoundProducts: action.value.products,
                 error: action.value.error,
                 message: action.value.message
+
         }
 
         case 'SEARCH_BY_ID':
