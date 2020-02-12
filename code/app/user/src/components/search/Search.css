@@ -14,7 +14,6 @@
 }
 
 .tableSearch table {
-    /* display: block; */
     margin: 50px auto;
     width: 50%;
     font-size: 1.2em;
@@ -53,4 +52,23 @@
 
 .searchInfo {
     text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .tableSearch table {
+        width: 95%}
+    .inputSearch input {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+
+    .tableSearch table {
+        width: 80%}
+    .inputSearch input {
+        width: 80%;
+    }
+    
 }
