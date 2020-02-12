@@ -10,14 +10,11 @@ class SearchResults extends Component {
     componentWillUnmount() {
         this.props.setProductFoundToFalse()
     }
-   
 
     render() {
-        console.log(this.props.error)
         return (
-        <>
-            {this.props.error===0 ? 
-            
+        <div className="searchResults_div">
+            {this.props.error===0? 
             <div style={{margin: "50px"}}>
                 <p>Hersteller: {this.props.product.hersteller}</p>
                 <p>Produktname: {this.props.product.productname}</p>
@@ -30,9 +27,10 @@ class SearchResults extends Component {
                 <p>Eiweiß: {this.props.product.protein}</p>
                 <p>Ballaststoffe: {this.props.product.ballaststoffe}</p>
                 <p>Anteil Obst / Gemüse / Nüsse: {this.props.product.obstGemueseNuesseAnteil}</p>
-            </div>
-            : <div style={{margin: "50px"}}><ErrorMessage fehlernummer={this.props.error} fehlermeldung={this.props.message} /></div>}
-         </>
+                </div> 
+                : <ErrorMessage />}
+                
+        </div>
         )
     }
 }
