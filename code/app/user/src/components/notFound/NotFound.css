@@ -1,4 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
+
+.notfound_div{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-align: center;
+}
+.notfound_div #error {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.notfound_div #error p{
+    font-size: 90px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+}
+.notfound_div #error #error404{
+    margin-right: 15px;
+    color:  black;
+}
+.notfound_div #error #o{
+    color:  #008341;
+}
+.notfound_div #error #o2{
+    color:	#86BC30;
+}
+.notfound_div #error #p{
+    color:	#FFCC01;
+}
+.notfound_div #error #s{
+    color:	#F18101;
+}
+.notfound_div #error #ausrufezeichen{
+    color:  #E73F12;
+}
+.img_not_found{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.img_not_found .img_ele{
+    box-sizing: border-box;
+    height: 500px;
+    width: 400px; 
+}
+@media only screen and (max-width: 767px) {
+    .notfound_div #error p{
+        font-size: 50px; 
+    }
+    .notfound_div #error {
+        height: 142px;
+    }
+    .img_not_found .img_ele{
+        height: 300px;
+        width: 200px; 
+    }
+ 
 }
