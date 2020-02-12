@@ -28,7 +28,7 @@ class SearchResults extends Component {
                 <p>Ballaststoffe: {this.props.product.ballaststoffe}</p>
                 <p>Anteil Obst / Gemüse / Nüsse: {this.props.product.obstGemueseNuesseAnteil}</p>
                 </div> 
-                : <ErrorMessage />}
+                : <ErrorMessage fehlerNummer = {this.props.error}/>}
                 
         </div>
         )
