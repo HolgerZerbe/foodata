@@ -21,7 +21,6 @@ app.get('/product', async (req, res) => {
 
         const foundproduct = await Product.find({ean:{$in:req.query.ean}});
 
-        
         if (foundproduct.length === 0) {
             return res.send({error: 1001,
                 message: "Produkt nicht gefunden"
@@ -55,22 +54,22 @@ app.get('/search', async (req, res) => {
     if (req.query) {
     
         const allReqQueryQ = req.query.q.split(' ');
-        let foundproducts=[]
+        let foundProducts=[]
 
         if (allReqQueryQ.length===1) {
-            foundproducts = await Product.find({$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+            foundProducts = await Product.find({$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
                                                 {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
                                                 ]});
                                         }
         else if (allReqQueryQ.length===2) {
-            foundproducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+            foundProducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
                                                 {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
                                                 ]}, {$or:[{productname: {$regex: allReqQueryQ[1], $options: 'i'}},
                                                 {hersteller: {$regex: allReqQueryQ[1], $options: 'i'}}
                                                 ]}]});
         }
         else {
-            foundproducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
+            foundProducts = await Product.find({$and:[{$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
             {hersteller: {$regex: allReqQueryQ[0], $options: 'i'}}
             ]}, {$or:[{productname: {$regex: allReqQueryQ[1], $options: 'i'}},
             {hersteller: {$regex: allReqQueryQ[1], $options: 'i'}},
@@ -80,10 +79,21 @@ app.get('/search', async (req, res) => {
             ]}]});
         }
 
-        if (foundproducts.length>0) {
+        const sortedProducts = foundProducts.sort((a, b)=>{
+            if (a.hersteller.toLowerCase() < b.hersteller.toLowerCase())
+                return -1 
+            if (a.hersteller.toLowerCase() > b.hersteller.toLowerCase())
+                return 1
+            return 0 
+            
+        })
+
+        console.log(sortedProducts);
+
+        if (sortedProducts.length>0) {
 
             let products =[];
-            for (let elem of foundproducts) {
+            for (let elem of sortedProducts) {
                 products.push({"id": elem._id, "hersteller": elem.hersteller, "productname": elem.productname })
             }
 
