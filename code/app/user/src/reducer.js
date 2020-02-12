@@ -17,15 +17,16 @@ const reducer = (state = initialState, action) => {
                 message: action.value.message,
                 arrayOfFoundProducts:[],
                 productFound: true
+
         }
 
         case 'SEARCH_PRODUCT':
 
-        return {arrayOfFoundProducts: action.value.products,
-                error: action.value.error,
-                message: action.value.message
+                return {arrayOfFoundProducts: action.value.products,
+                        error: action.value.error,
+                        message: action.value.message
 
-        }
+                }
 
         case 'SEARCH_BY_ID':
 
@@ -41,7 +42,7 @@ const reducer = (state = initialState, action) => {
                 
 
             case 'EMPTY_ARRAYOFFOUNDPRODUCTS':
-            return {arrayOfFoundProducts: action.value}
+            return {...state, arrayOfFoundProducts: action.value}
 
         default: 
             return state;

@@ -43,7 +43,7 @@ export const searchById = (id) => async dispatch => {
     })
 }
 
-export const setProductFoundToFalse = () => dispatch =>{
+export const setProductFoundToFalse = () => async dispatch =>{
 
     dispatch({
         type: 'SET_PRODUCTFOUND_TO_FALSE',
@@ -51,7 +51,7 @@ export const setProductFoundToFalse = () => dispatch =>{
     })
 }
 
-export const emptyArrayOfFoundProducts = () => dispatch =>{
+export const emptyArrayOfFoundProducts = () => async dispatch =>{
 
     dispatch({
         type: 'EMPTY_ARRAYOFFOUNDPRODUCTS',
