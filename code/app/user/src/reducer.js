@@ -12,7 +12,8 @@ const reducer = (state = initialState, action) => {
         console.log(action.value.error)
         console.log(action.value.product)
 
-        return {product: action.value.product,
+        return {...state,
+                product: action.value.product,
                 error: action.value.error,
                 message: action.value.message,
                 arrayOfFoundProducts:[],
@@ -22,7 +23,7 @@ const reducer = (state = initialState, action) => {
 
         case 'SEARCH_PRODUCT':
 
-                return {arrayOfFoundProducts: action.value.products,
+                return {...state, arrayOfFoundProducts: action.value.products,
                         error: action.value.error,
                         message: action.value.message
 
@@ -38,7 +39,7 @@ const reducer = (state = initialState, action) => {
             }
             
             case 'SET_PRODUCTFOUND_TO_FALSE':
-            return {productFound: action.value}        
+            return {...state, productFound: action.value}        
                 
 
             case 'EMPTY_ARRAYOFFOUNDPRODUCTS':

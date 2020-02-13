@@ -22,9 +22,9 @@
 }
 
 .linkNavbar:hover {
-    color: goldenrod;
-    text-shadow: 3px 3px 5px black;
-    box-shadow: 10px 10px 5px goldenrod ;
+    font-weight: 900;
+    text-shadow: 3px 3px 5px #b90606ff;
+    box-shadow: 10px 10px 5px #b90606ff ;
 }
 
 @media only screen and (max-width: 767px) {

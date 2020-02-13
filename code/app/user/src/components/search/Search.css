@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+.tableSearch tbody tr:hover {
+    color: #b90606ff;
+    text-decoration: underline;
+}
+
 .tableSearch tbody tr:nth-child(odd) {
     background-color: rgb(223, 219, 219);
 }
