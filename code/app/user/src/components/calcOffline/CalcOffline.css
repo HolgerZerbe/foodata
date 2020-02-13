@@ -1,4 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
+.calcDiv {
+    margin: 50px;
+    font-size: 1em;
+    width: 100%;
+    padding: 3px;
+}
+
+.calcDiv input,
+.calcDiv select {
+    margin: 5px 0;
+    display: block;
+    min-width: 50%;
+    font-size: 1em;
+}
+
+.calcDiv p {
+    width: 50%;
+}
+
+.calcDiv button {
+    display: block;
+    max-width: 50%;
+    font-size: 1em;
+    margin: 0 auto;
 }
