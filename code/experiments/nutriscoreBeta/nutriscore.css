@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(228, 205, 205);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    background: rgb(243, 237, 237);
+    height: 85%;
+    margin: 50px;
+    padding: 50px;
+
+
+}
+
+.section-headline {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.block {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+input, button {
+    display: inline-block;
+    margin: 1em;
+    height: 30px;
+}
+
+.btn {
+    background: white;
+    border-style: solid;
+    color:  rgb(48, 28, 28);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-left: 1.4em;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 49px;
+}
+
+.btn {
+    display: block;
+} 
+
+.nutri-score-display {
+    background-color: rgb(144, 144, 184, 0.5);
+    margin-left: 1.9em;    
+    width: 80%;
+    height: 12%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.nutri-scoring {
+    border: solid;
+    background-color: rgba(225, 225, 241, 0.5);
+    color: white;
+    font-size: 3.3em;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+}
+
+.traffic-light {
+    background-color: rgba(199, 199, 219, 0.5);
+    margin-left: 1.5em;
+    padding-left: 15px;
+    width: 75%;
+    height: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    font-size: 1.5em;
+}
+
+.traffic-light-display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.traffic-light-scoring {
+    /* background: #ffbf00; */
+    background: blue;
+    width: 20%;
+    margin-right: 15px;
+}

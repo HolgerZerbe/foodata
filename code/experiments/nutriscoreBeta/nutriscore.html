@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nutriscore</title>
+    <link rel="stylesheet" href="nutriscore.css">
+</head>
+<body>    
+    <div class="container">
+        <div class="input-values">
+            <div class="section-headline">Eingabe Werte</div>
+            <ul>
+                <li><input type="number" step="1" placeholder="energyInput in kcal per 100g" id="energyInput"></li>
+                <li><input type="number" step="0.25" placeholder="fatInput per 100g" id="fatInput"></li>
+                <li><input type="number" step="0.25" placeholder="satFatInput per 100g" id="satFatInput"></li>
+                <li><input type="number" step="0.25" placeholder="sugarsInput per 100g" id="sugarsInput"></li>
+                <li><input type="number" step="0.1" placeholder="saltInput per 100g" id="saltInput"></li>
+                <li><input type="number" step="0.1" placeholder="fruits,nuts,vegs per 100g" id="healthyIngInput"></li>
+                <li><input type="number" step="0.1" placeholder="fibresInput per 100g" id="fibresInput"></li>
+                <li><input type="number" step="0.1" placeholder="proteinsInput per 100g" Id="proteinsInput"></li>              
+            </ul>
+        </div>
+        <div class="input-categories">
+            <div class="section-headline">Auswahl Lebensmittel</div>
+            <div>                
+                <label for="genFoods" class="block">
+                    <input type="radio" name="gender"  id="genFoods" checked  class="r-btn" value="generalFoods">Essen allgemein
+                </label>   
+                <label for="chs" class="block">
+                    <input type="radio" name="gender" id="cheese"  class="r-btn" value="cheese">Käse
+                </label>
+                <label for="vegOF" class="block">
+                    <input type="radio" name="gender" id="vegOF" class="r-btn"value="oils-fats">pflanzliche Öle und Fette
+                </label>
+                <label for="drinks" class="block">
+                    <input type="radio" name="gender" id="drinks" class="r-btn" value="drinks">Getränke
+                </label>
+            </div>
+                        
+        </div>
+        <div class="scores-display">
+            <div class="section-headline">Anzeige Nutri-score und Lebensmittelampel</div>
+            <button class="btn" id="btnNS">Nutri-score!</button>
+            <div class="nutri-score-display">
+                <div class="nutri-scoring" id="nutriScore">N</div>
+                <!-- <div class="nutri-scoring" id="b">B</div>
+                <div class="nutri-scoring" id="c">C</div>
+                <div class="nutri-scoring" id="d">D</div>
+                <div class="nutri-scoring" id="e">E</div> -->
+            </div>
+            <button class="btn" id="btnTl">Lebensmittelampel</button>
+            <div class="traffic-light">
+                <div class="traffic-light-display">
+                    <div>Fette</div>
+                    <div class="traffic-light-scoring" id="tlScoringFat"></div>
+                </div>
+                <div class="traffic-light-display">
+                    <div>gesättigte Fette</div>
+                    <div class="traffic-light-scoring" id="tlScoringSatFat"></div>
+                </div>
+                <div class="traffic-light-display">
+                    <div>Zucker</div> 
+                    <div class="traffic-light-scoring" id="tlScoringSugars"></div>
+                </div>
+                <div class="traffic-light-display" id="tlScoringFats">
+                    <div>Salz</div>                
+                    <div class="traffic-light-scoring" id="tlScoringSalt"></div>
+
+                </div>
+            </div>
+        </div>                       
+    </div>                 
+  
+    <script src="nutriscore.js"></script>
+</body>
+</html>
