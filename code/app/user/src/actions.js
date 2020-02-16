@@ -70,6 +70,16 @@ export const searchById = (id) => async dispatch => {
     }
 }
 
+export const sendAwayToCalculate = (product) => async dispatch => {
+
+    dispatch({
+        type: 'SEND_AWAY_TO_CALCULATE',
+        value: product
+    })
+}
+
+
+
 export const setProductFoundToFalse = () => async dispatch =>{
 
     dispatch({

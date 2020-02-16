@@ -14,7 +14,7 @@ class NotFound extends Component {
                 <p id="ausrufezeichen">r </p>
             </div>
             <div className="img_not_found">
-                <img className="img_ele" src='3d_man_kein_seite_gefunden.png'/>
+                <img className="img_ele" src='3d_man_kein_seite_gefunden.png' alt=''/>
             </div>
         </div>
         )

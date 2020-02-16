@@ -9,8 +9,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'LOAD_PRODUCT':
-        console.log(action.value.error)
-        console.log(action.value.product)
 
         return {
                 product: action.value.product,
@@ -40,12 +38,19 @@ const reducer = (state = initialState, action) => {
                     productFound: true
             }
             
-            case 'SET_PRODUCTFOUND_TO_FALSE':
+        case 'SEND_AWAY_TO_CALCULATE':
+        return {...state,
+                product: action.value,
+                error: 0,
+                productFound: true}    
+
+
+        case 'SET_PRODUCTFOUND_TO_FALSE':
             return {...state, 
                     productFound: action.value}        
                 
 
-            case 'EMPTY_ARRAYOFFOUNDPRODUCTS':
+        case 'EMPTY_ARRAYOFFOUNDPRODUCTS':
             return {...state, 
                     arrayOfFoundProducts: action.value}
 

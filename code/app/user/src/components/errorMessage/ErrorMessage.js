@@ -14,7 +14,7 @@ export default function ErrorMessage(props) {
                 <p id="ausrufezeichen">!</p>
             </div>
             <div className="img_not_found">
-                <img className="img_ele" src='3d_man_kein_produkt_gefunden.png'/>
+                <img className="img_ele" src='3d_man_kein_produkt_gefunden.png' alt=''/>
             </div>
         </div> : null}
 
@@ -27,7 +27,7 @@ export default function ErrorMessage(props) {
                 <p id="ausrufezeichen">!</p>
             </div>
             <div className="img_not_found">
-                <img className="img_ele" src='3d_man_server_nicht_erreichbar.png'/>
+                <img className="img_ele" src='3d_man_server_nicht_erreichbar.png' alt=''/>
             </div>
         </div> : null}
 
