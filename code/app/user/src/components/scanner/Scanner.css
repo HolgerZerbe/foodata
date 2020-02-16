@@ -1,40 +1,64 @@
 
-  
-  .ScannerApp {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-
-  }
-  .ScannerApp .result{
-    margin: 5px;
-  }
-  .containerScanner{
-    height: 90%;
-    width: 98%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 5px;
-  }
-  .viewport{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 72%;
-    margin: 5px;
-    padding: 5px;
-  }
-  .viewport video{
-    height: 400px;
-    width: 400px;
-
-  }
-  .viewport canvas{
-    height: 400px;
-    width: 400px;
-    margin-left: -400px;
- 
-  }
-  
+div{
+  box-sizing: border-box;
+}
+.ScannerApp {
+  width: 100%;
+  height: 98%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%; 
+}
+.containerScanner{
+  width: 100%;
+  height:98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative; 
+}
+.viewport{
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 72%;
+}
+.viewport video{
+  position: absolute;
+  width: 100%;
+}
+.viewport canvas{
+  width: 100%;
+  z-index: 2;
+}
+#interactive.viewport .over {
+  z-index: 1;
+  position:absolute;
+  height: 85%;
+  width: 85%;
+  margin-top: 6%;
+  top:0;
+}
+.top, .bottom {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+}
+.top {
+  top: 0;
+  border-top: 5px solid #b90606ff;
+}
+.bottom {
+  bottom: 0;
+  border-bottom: 5px solid #b90606ff;
+}
+.left {
+  left: 0;
+  border-left: 5px solid #b90606ff;
+}
+.right {
+  right: 0;
+  border-right: 5px solid #b90606ff;
+}

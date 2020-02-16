@@ -1,36 +1,27 @@
 .about_div {
-    /* width: auto;
-    height: 100%;
-    margin: 0; */
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
-
 .about_div h1{
     width: 100%;
     text-align: center;
     margin: 20px auto;
 }
-
 .photo_div{
     width: 100%;
     margin: 0 auto; 
     display: flex;
     justify-content: center;
-    /* border: black solid  1px; */
 }
-
 .about_text{
     width: 60%;
     margin :0 auto;
     text-align: left;
 }
-
 .about_div ul {
     margin-bottom: 20px;
 }
-
 .about_text ul li{
     list-style-type: none;
 }
@@ -40,6 +31,5 @@
     }
     .about_div {
         overflow: scroll;
-
     }
   }
