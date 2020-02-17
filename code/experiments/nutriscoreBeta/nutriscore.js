@@ -86,16 +86,11 @@ const satFatInput = document.getElementById('satFatInput');
 const sugarsInput = document.getElementById('sugarsInput');
 const saltInput = document.getElementById('saltInput');
 
-const sodiumInputValue = saltInput.value*0.388;
-
-
 // 0.1.2 Dom Input "positive nutriments "
 
 const healthyIngInput = document.getElementById('healthyIngInput');
 const fibresInput = document.getElementById('fibresInput');
 const proteinsInput = document.getElementById('proteinsInput');
-
-
 
 // 0.2   Dom-Elemente Nutri-score
 //
@@ -152,12 +147,10 @@ const tlScoring = (i,elementToChange) => {
 
 // 1.1.1 Calculation Tl Food "fat"
 
-const fatTlCalcFood = (fat) => {
-        // if(fat < 3) {return 'fatTlCalcFood: Green (low)'}        
+const fatTlCalcFood = (fat) => {             
         if(fat < 3) {return 0}        
     else if(fat >= 3 && fat <= 17.5) {return 1}     
     else if(fat > 17.5) {return 2}      
-    else return 'Keine Zahl eingegeben!';    
 };
 
 // 1.1.2 Calculation Tl Food "satFat"
@@ -166,16 +159,14 @@ const satFatTlCalcFood = (satFat) => {
 
     if(satFat <= 1.5) {return 0}           
     else if(satFat >= 1.5 && satFat <= 5) {return 1}       
-    else if(satFat > 5) {return 2}    
-    else return 'Keine Zahl eingegeben!';    
+    else if(satFat > 5) {return 2}  
 };
 // 1.1.3 Calculation Tl Food "sugars"
 
 const sugarsTlCalcFood = (sugars) => {
     if(sugars < 5) {return 0}
     else if(sugars >= 5 && sugars <= 22.5) {return 1}   
-    else if(sugars > 22.5) {return 2}
-    else return 'Keine Zahl eingegeben!';    
+    else if(sugars > 22.5) {return 2}       
 };
 
 // 1.1.4 Calculation Tl Food "salt"
@@ -184,47 +175,42 @@ const saltTlCalcFood = (salt) => {
     if(salt < 0.3) {return 0
     }
     else if(salt >= 0.3 && salt <= 1.5) {return 1}    
-    else if(salt > 1.5) {return 2}
-    else {return 'Keine Zahl eingegeben!'};    
+    else if(salt > 1.5) {return 2}       
 };
 
 // 1.2 Calculations Tl Drinks
 
 // 1.2.1 Calculation Tl Drinks "fat"
 
-const fatTlCalcDrinks = (fat) => {
+const fatTlCalcDrinks = (fat) => {    
     if(fat < 1.5) {return 0}
     else if(fat >= 1.5 && fat <= 8.75) {return 1}    
-    else if(fat > 8.75) {return 2}
-    else return 'Keine Zahl eingegeben!';    
+    else if(fat > 8.75) {return 2}   
 };
+
 
 // 1.2.2 Calculation Tl Drinks "satFat"
 
-const satFatTlCalcDrinks = (satFat) => {
+const satFatTlCalcDrinks = (satFat) => {    
     if(satFat < 0.75) {return 0}
     else if(satFat >= 0.75 && satFat <= 2.5) {return 1}    
-    else if(satFat > 2.5) {return 2}
-    else return 'Keine Zahl eingegeben!';    
+    else if(satFat > 2.5) {return 2}      
 };
 
 // 1.2.3 Calculation Tl Drinks "sugars"
 
-const sugarsTlCalcDrinks = (sugars) => {
+const sugarsTlCalcDrinks = (sugars) => {    
     if(sugars < 2.5) {return 0}
     else if(sugars >= 2.5 && sugars <= 11.25) {return 1}    
-    else if(sugars > 11.25) {return 2}
-    else return 'Keine Zahl eingegeben!';    
+    else if(sugars > 11.25) {return 2}       
 };
 
 // 1.2.4 Calculation Tl Drinks "salt"
 
-const saltTlCalcDrinks = (salt) => {
-
+const saltTlCalcDrinks = (salt) => {    
     if(salt < 0.3) {return 0}
     else if(salt >= 0.3 && salt <= 1.5) {return 1}    
-    else if(salt > 1.5) {return 2}
-    else return 'Keine Zahl eingegeben!';    
+    else if(salt > 1.5) {return 2}    
 };
 
 
@@ -234,7 +220,7 @@ btnTl.onclick = () => {
     const drinksCat = document.getElementById('drinks').checked;     
     if(drinksCat) {
         console.log("it is drinks");
-        tlScoring(fatTlCalcDrinks(fatInput.value), tlScoringFat);        
+        tlScoring(fatTlCalcDrinks(fatInput.value),tlScoringFat);        
         tlScoring(satFatTlCalcDrinks(satFatInput.value),tlScoringSatFat);
         tlScoring(sugarsTlCalcDrinks(sugarsInput.value),tlScoringSugars);
         tlScoring(saltTlCalcDrinks(saltInput.value),tlScoringSalt);         
@@ -267,8 +253,7 @@ const energyNutriCalc = (energy) => {
     else if(energy > 560 && energy <= 640) {return 7}
     else if(energy > 640 && energy <= 720) {return 8}
     else if(energy > 720 && energy <= 800) {return 9}
-    else if(energy > 800) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(energy > 800) {return 10}    
 };
 
 // 2.1.2 Calculation Nutri-score "saturated fats"
@@ -284,8 +269,7 @@ const satFatNutriCalc = (satfat) => {
     else if(satfat > 7 && satfat<= 8) {return 7}
     else if(satfat > 8 && satfat<= 9) {return 8}
     else if(satfat > 9 && satfat<= 10) {return 9}
-    else if(satfat > 10) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(satfat > 10) {return 10}     
 };
 
 // 2.1.3 Calculation Nutri-score "sugars"
@@ -301,13 +285,13 @@ const sugarsNutriCalc = (sugars) => {
     else if(sugars > 31 && sugars<= 36) {return 7}
     else if(sugars > 36 && sugars<= 40) {return 8}
     else if(sugars > 40 && sugars<= 45) {return 9}
-    else if(sugars > 45) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(sugars > 45) {return 10}      
 };
 
 // 2.1.4 Calculation Nutri-score "sodium"
 
 const sodiumNutriCalc = (sodium) => {
+    console.log(sodium)
     if(sodium <= 0.09) {return 0}
     else if(sodium > 0.09 && sodium <= 1.8) {return 1}
     else if(sodium > 1.8 && sodium <= 2.7) {return 2}
@@ -318,8 +302,7 @@ const sodiumNutriCalc = (sodium) => {
     else if(sodium > 6.3 && sodium <= 7.2) {return 7}
     else if(sodium > 7.2 && sodium <= 8.1) {return 8}
     else if(sodium > 8.1 && sodium <= 9) {return 9}
-    else if(sodium > 9) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(sodium > 9) {return 10}       
 };
 
 // 2.1.5 Calculation Nutri-score "ratio satFats/fats"
@@ -339,7 +322,6 @@ const ratioFatsNutriCalc = (fat,satfat) => {
     else return 'Keine Zahl eingegeben!'    
 };
 
-
 // 2.2   Calculations Nutri-score "positive nutriments"
 
 // 2.2.1 Calculation Nutri-score "fruits, vegetables, nuts (healthyIng/ healthy Ingredients)"
@@ -348,11 +330,8 @@ const healthyIngNutriCalc = (healthyIng) => {
     if(healthyIng <= 40) {return 0}
     else if(healthyIng > 40 && healthyIng <= 60) {return 1}
     else if(healthyIng > 60 && healthyIng <= 80) {return 2}      
-    else if(healthyIng > 80) {return 5}
-    else return 'Keine Zahl eingegeben!'    
+    else if(healthyIng > 80) {return 5}       
 };
-
-
 
 // 2.2.2 Calculation Nutri-score "fibres"
 
@@ -362,26 +341,20 @@ const fibresCalc = (fibres) => {
     else if(fibres > 1.9 && fibres <= 2.8) {return 2}
     else if(fibres > 2.8 && fibres <= 3.7) {return 3}
     else if(fibres > 3.7 && fibres <= 4.7) {return 4}    
-    else if(fibres > 4.7) {return 5}
-    else return 'Keine Zahl eingegeben!'    
+    else if(fibres > 4.7) {return 5}       
 };;
-
-
 
 // 2.2.3 Calculation Nutri-score "proteins"
 
 const proteinsCalc =(proteins) => {
-    if(proteins <= 1.6) {return 0}
-    else if(proteins > 1.6 && proteins <= 1.8) {return 1}
-    else if(proteins > 3.2 && proteins <= 2.7) {return 2}
-    else if(proteins > 4.8 && proteins <= 3.6) {return 3}
+    console.log(proteins)
+;    if(proteins <= 1.6) {return 0}
+    else if(proteins > 1.6 && proteins <= 3.2) {return 1}
+    else if(proteins > 3.2 && proteins <= 4.8) {return 2}
+    else if(proteins > 4.8 && proteins <= 6.4) {return 3}
     else if(proteins > 6.4 && proteins <= 8.0) {return 4}    
-    else if(proteins > 8.0) {return 5}
-    else return 'Keine Zahl eingegeben!'    
+    else if(proteins > 8.0) {return 5}       
 };
-
-
-
 
 // 2.3    Calculations Nutri-score "drinks modified"
 //
@@ -398,11 +371,8 @@ const energyNutriDCalc = (energy) => {
     else if(energy > 43 && energy <= 50) {return 7}
     else if(energy > 50 && energy <= 57) {return 8}
     else if(energy > 57 && energy <= 65) {return 9}
-    else if(energy > 65) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(energy > 65) {return 10}      
 };
-
-
 
 // 2.3.2 Calculation Nutri-score "sugars (Drinks modified)"
 
@@ -417,11 +387,8 @@ const sugarsNutriDCalc = (sugars) => {
     else if(sugars > 9   && sugars<= 10.5) {return 7}
     else if(sugars > 10.5 && sugars<= 12) {return 8}
     else if(sugars > 12   && sugars<= 13.5) {return 9}
-    else if(sugars > 13.5) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(sugars > 13.5) {return 10}     
 };
-
-
 
 // 2.3.3 Calculation Nutri-score "healthyIng (Drinks modified)"
 
@@ -429,9 +396,9 @@ const healthyIngNutriDCalc = (healthyIng) => {
     if(healthyIng <= 40) {return 0}
     else if(healthyIng > 40 && healthyIng <= 60) {return 2}
     else if(healthyIng > 60 && healthyIng <= 80) {return 4}      
-    else if(healthyIng > 80) {return 10}
-    else return 'Keine Zahl eingegeben!'    
+    else if(healthyIng > 80) {return 10}       
 };
+
 
 // 3.      Calculation Nutri-score "Food (numerical total)"
 //
@@ -449,59 +416,57 @@ const nutriNFCalc = (energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg
     return nutriNF;
 } 
 
-console.log(nutriNFCalc(energyInput.value,
+console.log('NutriNFCalc: ' + nutriNFCalc(energyInput.value,
                         satFatInput.value,
                         sugarsInput.value,
-                        sodiumInputValue));
+                        (parseFloat(saltInput.value)*0.388)));
 
 // 3.1.2    Calculation Nutri-score "Score nutriNVFO (numerical total)"
-
-// const nutriNVFO = energyNutriCalc(healthyIngInput + ratioFatsNutriCalc(fatInput,satFatInput) + sugarsNutriCalc(sugarsInput) + sodiumNutriCalc(sodiumInput))
 
 
 const nutriNVFOCalc = (energyInputArg,fatInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg) => {
     const nutriNVFO = energyNutriCalc(energyInputArg) + 
                     ratioFatsNutriCalc(fatInputArg,satFatInputArg) + 
                     sugarsNutriCalc(sugarsInputArg) + 
-                    sodiumNutriCalc(sodiumInputArg)
+                    sodiumNutriCalc((parseFloat(saltInput.value)*0.388));                    
     return nutriNVFO;
 }
 
-console.log(nutriNVFOCalc(energyNutriCalc(energyInput.value),
-                        ratioFatsNutriCalc(fatInput.value,satFatInput.value),
-                        sugarsNutriCalc(sugarsInput.value),
-                        sodiumNutriCalc(sodiumInputValue)));
+console.log(nutriNVFOCalc(
+                    energyNutriCalc(energyInput.value),
+                    ratioFatsNutriCalc(fatInput.value,satFatInput.value),
+                    sugarsNutriCalc(sugarsInput.value),
+                    sodiumNutriCalc((parseFloat(saltInput.value)*0.388))
+                        )
+            );
 
 // 3.1.3    Calculation Nutri-score "Score nutriPF (numerical total)"
 
-// const nutriPF = healthyIngNutriCalc(healthyIngInput) + fibresFunc(fibresInput) + proteinsFunc(proteinsInput);
-
 const nutriPFCalc = (healthyIngInputArg,fibresInputArg,proteinsInputArg) => {
+    console.log(healthyIngInputArg,fibresInputArg,proteinsInputArg);
     const nutriPF = healthyIngNutriCalc(healthyIngInputArg) + 
                     fibresCalc(fibresInputArg) + 
                     proteinsCalc(proteinsInputArg);
     return nutriPF;
 } 
 
-console.log(nutriPFCalc(healthyIngNutriCalc(healthyIngInput.value),
-                        fibresCalc(fibresInput.value),
-                        proteinsCalc(proteinsInput.value)));
+console.log('NutriPFCalc: ' + nutriPFCalc(
+                                    healthyIngNutriCalc(healthyIngInput.value),
+                                    fibresCalc(fibresInput.value),
+                                    proteinsCalc(proteinsInput.value)
+                                    )
+            );
 
 // 3.1.4    Calculation Nutri-score "Score nutriPF11 (numerical total)"
-
-// const nutriPF11 = healthyIngNutriCalc(healthyIngInput) + fibresFunc(fibresInput);
 
 const nutriPF11Calc = (healthyIngInputArg,fibresInputArg) => {
     const nutriPF11 = healthyIngNutriCalc(healthyIngInputArg) + fibresCalc(fibresInputArg);
     return nutriPF11;
 } 
 
-console.log(nutriPF11Calc(healthyIngNutriCalc(healthyIngInput.value),
+console.log('nutriPF11Calc: ' + nutriPF11Calc(healthyIngNutriCalc(healthyIngInput.value),
                             fibresCalc(fibresInput.value)));
                             
-
-console.log('nutriNF: ' + nutriNFCalc() + ' |nutriNVFO: ' + nutriNVFOCalc() + '|nutriPF:' + nutriPFCalc() + '|nutriPF11:' + nutriPF11Calc());
-
 
 
 // 3.2 Calculation Nutri-score "nutriNumF + nutriScoreF (Food)"
@@ -511,6 +476,7 @@ const nutriNumFCalc = (healthyIngNutriArg,nutriNFArg,nutriNVFOArg,nutriPFArg,nut
     const vegOFCat = document.getElementById('vegOF').checked; 
     let nutriNumF = 0;    
     if(vegOFCat) {
+        console.log('nutriNVFOArg: ' + nutriNVFOArg + ' |' + 'nutriPFArg: ' + nutriPFArg);
         nutriNumF = nutriNVFOArg - nutriPFArg;
         console.log('nutriScoreNumVegOF: ' + nutriNumF);
         
@@ -528,13 +494,6 @@ const nutriNumFCalc = (healthyIngNutriArg,nutriNFArg,nutriNVFOArg,nutriPFArg,nut
     return nutriNumF;
 }
 
-/* const nutriNumFCalcEx = () => {
-    return nutriNumFCalc(vegOFCat,cheeseCat,healthyIngNutriCalc(),nutriNFCalc(),nutriNVFOCalc(),nutriPFCalc(),nutriPF11Calc());
-}  */
-
-/* console.log('nutriNumF: ' + nutriNumFCalcEx()); */
-
-
 const nutriScoreFCalc = (nutriNum) => {   
     
     if (nutriNum <= -1) {return 0}
@@ -545,52 +504,57 @@ const nutriScoreFCalc = (nutriNum) => {
     else {return 'Fehler'}
 }
 
-// console.log('Nutri-score Foods: ' + 
-//             nutriScoreFCalc(nutriNumFCalc(healthyIngNutriCalc(healthyIngInput.value),
-//                                             nutriNFCalc(nutriNF(energyInput.value,
-//                                                                 satFatInput.value,
-//                                                                 sugarsInput.value,
-//                                                                 sodiumInputValue)),
-//                                             nutriNVFOCalc(energyNutriCalc(energyInput.value),
-//                                                         ratioFatsNutriCalc(fatInput.value,satFatInput.value),
-//                                                         sugarsNutriCalc(sugarsInput.value),
-//                                                         sodiumNutriCalc(sodiumInputValue)),
-//                                             nutriPFCalc(healthyIngNutriCalc(healthyIngInput.value),
-//                                                         fibresCalc(fibresInput.value),
-//                                                         proteinsCalc(proteinsInput.value)),
-//                                             nutriPF11Calc(healthyIngNutriCalc(healthyIngInput.value),
-//                                                         fibresCalc(fibresInput.value)))));
+console.log('Nutri-score Foods: ' + 
+            nutriScoreFCalc(
+                nutriNumFCalc(
+                    healthyIngNutriCalc(healthyIngInput.value),
+                        nutriNFCalc(energyInput.value,satFatInput.value,sugarsInput.value,(parseFloat(saltInput.value)*0.388)
+                                ),                                                            
+                        nutriNVFOCalc(
+                            energyNutriCalc(energyInput.value),
+                            ratioFatsNutriCalc(fatInput.value,satFatInput.value),
+                            sugarsNutriCalc(sugarsInput.value),
+                            sodiumNutriCalc(parseFloat(saltInput.value)*0.388)
+                                ),
+                        nutriPFCalc(
+                            healthyIngNutriCalc(healthyIngInput.value),
+                            fibresCalc(fibresInput.value),
+                            proteinsCalc(proteinsInput.value)
+                                ),
+                        nutriPF11Calc(
+                            healthyIngNutriCalc(healthyIngInput.value),
+                            fibresCalc(fibresInput.value)
+                                )
+                            )
+                    )
+            );
 
                                                                     
 // 4. Calculation Nutri-score "nutriNumD + nutriScoreD (Drinks)"
 
 
-const nutriNumDCalc = (healthyIngInputArg,
-                        fibresInputArg,
-                        proteinsInputArg,
-                        energyInputArg,
+const nutriNumDCalc = ( energyInputArg,
                         satFatInputArg,
                         sugarsInputArg,
-                        sodiumInputArg) => {    
+                        sodiumInputArg,
+                        healthyIngInputArg,
+                        fibresInputArg,
+                        proteinsInputArg,) => {    
+                            console.log(healthyIngInputArg,fibresInputArg,proteinsInputArg,energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg);
 
-    const nutriPD = healthyIngNutriDCalc(healthyIngInputArg) + fibresCalc(fibresInputArg) + proteinsCalc(proteinsInputArg);
-    console.log('nutriPD:' + nutriPD);
-    const nutriND = energyNutriDCalc(energyInputArg) + satFatNutriCalc(satFatInputArg) +sugarsNutriDCalc(sugarsInputArg) + sodiumNutriCalc(sodiumInputArg);
-    console.log('nutriND: '+ nutriPD);
-    const nutriNumD = nutriND - nutriPD;
-    console.log('nutriNumD' + nutriNumD)
-    return nutriNumD;
+                            const nutriPD = healthyIngNutriDCalc(healthyIngInputArg) + fibresCalc(fibresInputArg) + proteinsCalc(proteinsInputArg);
+                            console.log('nutriPD: ');
+                            console.log(nutriPD);
+                            const nutriND = energyNutriDCalc(energyInputArg) + satFatNutriCalc(satFatInputArg) +sugarsNutriDCalc(sugarsInputArg) + sodiumNutriCalc(sodiumInputArg);
+                            console.log('nutriND: ');
+                            console.log(nutriND);
+                            const nutriNumD = nutriND - nutriPD;
+                            console.log('nutriNumD: ')
+                            console.log(nutriNumD)
+                            return nutriNumD;
     
 }
-
-console.log(nutriNumDCalc(healthyIngNutriDCalc(healthyIngInput.value),
-                        fibresCalc(fibresInput.value),
-                        proteinsCalc(proteinsInput.value),
-                        energyNutriDCalc(energyInput.value),
-                        satFatNutriCalc(satFatInput.value),
-                        sugarsNutriDCalc(sugarsInput.value),
-                        sodiumNutriCalc(sodiumInputValue)))
-                            
+                           
 
 const nutriScoreDCalc = (nutriNum) => {
     if (nutriNum === 'Water') {return 0}
@@ -601,25 +565,55 @@ const nutriScoreDCalc = (nutriNum) => {
     else {return 'Fehler'}
 }
 
-console.log('Nutri-score Drinks: ' + nutriScoreDCalc(nutriNumDCalc()));
-
-
 
 // Button-Funktion Nutriscore!
 
 btnNS.onclick = () => {
     const drinksCat = document.getElementById('drinks').checked;
+    const sodiumInputValue = parseFloat(saltInput.value)*0.388;
+
     if(drinksCat) {
         console.log('it is drinks');
-        nutriScoring(nutriScoreDCalc(nutriNumDCalc(healthyIngNutriDCalc(healthyIngInput.value),
-                                                    fibresCalc(fibresInput.value),
-                                                    proteinsCalc(proteinsInput.value),
-                                                    energyNutriDCalc(energyInput.value),
-                                                    satFatNutriCalc(satFatInput.value),
-                                                    sugarsNutriDCalc(sugarsInput.value),
-                                                    sodiumNutriCalc(sodiumInputValue))),)
+        nutriScoring(
+            nutriScoreDCalc(
+                nutriNumDCalc(
+                    healthyIngNutriDCalc(healthyIngInput.value),
+                    fibresCalc(fibresInput.value),
+                    proteinsCalc(proteinsInput.value),
+                    energyNutriDCalc(energyInput.value),
+                    satFatNutriCalc(satFatInput.value),
+                    sugarsNutriDCalc(sugarsInput.value),
+                    sodiumNutriCalc(sodiumInputValue)
+                )
+            )
+        )
     }
     else {
+
         console.log('it is food');
+        nutriScoring(
+            nutriScoreFCalc(
+                nutriNumFCalc(
+                    healthyIngNutriCalc(healthyIngInput.value),
+                        nutriNFCalc(energyInput.value,satFatInput.value,sugarsInput.value,sodiumInputValue
+                                ),                                                            
+                        nutriNVFOCalc(
+                            energyNutriCalc(energyInput.value),
+                            ratioFatsNutriCalc(fatInput.value,satFatInput.value),
+                            sugarsNutriCalc(sugarsInput.value),
+                            sodiumNutriCalc(sodiumInputValue)
+                                ),
+                        nutriPFCalc(
+                            healthyIngNutriCalc(healthyIngInput.value),
+                            fibresCalc(fibresInput.value),
+                            proteinsCalc(proteinsInput.value)
+                                ),
+                        nutriPF11Calc(
+                            healthyIngNutriCalc(healthyIngInput.value),
+                            fibresCalc(fibresInput.value)
+                                )
+                            )
+                    )
+            );
     }
 }
