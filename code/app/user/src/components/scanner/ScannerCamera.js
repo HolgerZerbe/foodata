@@ -72,14 +72,12 @@ const ScannerCamera = props => {
     // QuaggaJS would look for an element that matches
     // the CSS selector #interactive.viewport
     <div id="interactive" className="viewport" >
-      <div className="over">
-          {/* <div class="corners"> */}
+      <div className="over anim-box">
+            <div className='scanner'></div>
             <div className="top left"></div>
             <div className="top right"></div>
             <div className="bottom right"></div>
-            <div className="bottom left"></div>
-          {/* </div> */}
-      </div>
+            <div className="bottom left"></div>      </div>
     </div>
   );
 };
