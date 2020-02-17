@@ -21,10 +21,25 @@
     box-shadow: 10px 10px 5px grey;
 }
 
-.linkNavbar:hover {
+/* .linkNavbar:hover {
     font-weight: 900;
     text-shadow: 3px 3px 5px #b90606ff;
     box-shadow: 10px 10px 5px #b90606ff ;
+} */
+
+.ln1:hover {
+    background-color: red;
+    color: white;
+}
+
+.ln2:hover {
+    background-color: goldenrod;
+    color: white;
+}
+
+.ln3:hover {
+    background-color:green;
+    color: white;
 }
 
 @media only screen and (max-width: 767px) {

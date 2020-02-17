@@ -9,9 +9,9 @@ class Navbar extends Component {
             <div className="navbar">
 
             
-                <Link className="linkNavbar" to="/scan">Scannen</Link>
-                <Link className="linkNavbar" to="/search">Produkt Suchen</Link>
-                <Link className="linkNavbar" to="/calc">Selbst berechnen</Link>
+                <Link className="linkNavbar ln1" to="/scan">Scannen</Link>
+                <Link className="linkNavbar ln2" to="/search">Produkt Suchen</Link>
+                <Link className="linkNavbar ln3" to="/calc">Selbst berechnen</Link>
             
 
             </div>

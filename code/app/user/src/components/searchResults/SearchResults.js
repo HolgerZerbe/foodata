@@ -6,22 +6,28 @@ import {setProductFoundToFalse} from '../../actions';
 
 
 class SearchResults extends Component {
-
+    
     state = {
         colorStyle:['#32CD32','#ffbf00','#ff0000', '#cdd0d4'],
         fatBG: `#cdd0d4`,
         satFatBG: `#cdd0d4`,  
         sugarBG: `#cdd0d4`,  
         saltBG: `#cdd0d4`
-
+        
     }
+    
+    fat= "";
+    satFat="";
+    sugar="";
+    salt ="";
+
 
     tlScoring = (i,elementToChange) => {   
         this.setState({[elementToChange]: this.state.colorStyle[i]})
    }
 
     fatTlCalcFood = (fat) => {
-               
+
     if(fat < 3) {return 0}        
     else if(fat >= 3 && fat <= 17.5) {return 1}     
     else if(fat > 17.5) {return 2}      
@@ -97,10 +103,10 @@ class SearchResults extends Component {
 };
 
     replacePoints = () => {
-        const fat = parseFloat(this.props.product.fett).toFixed(1).toString().replace('.', ',');
-        const satFat = parseFloat(this.props.product.gesaettigteFettsaeuren   ).toFixed(1).toString().replace('.', ',');
-        const sugar = parseFloat(this.props.product.zucker).toFixed(1).toString().replace('.', ',');
-        const salt = ((Math.round(parseFloat(this.props.product.natrium)*2.54*10))/10).toFixed(1).toString().replace('.', ',')
+        this.fat = parseFloat(this.props.product.fett).toFixed(1).toString().replace('.', ',');
+        this.satFat = parseFloat(this.props.product.gesaettigteFettsaeuren   ).toFixed(1).toString().replace('.', ',');
+        this.sugar = parseFloat(this.props.product.zucker).toFixed(1).toString().replace('.', ',');
+        this.salt = ((Math.round(parseFloat(this.props.product.natrium)*2.54*10))/10).toFixed(1).toString().replace('.', ',')
     }
 
 componentWillUnmount() {
@@ -108,14 +114,16 @@ componentWillUnmount() {
 }
 
 componentDidMount() {
-    this.replacePoints();
+    
     if(this.props.error === 0 && this.props.product.productGroup && (this.props.product.productGroup.toLowerCase()==="getraenk" || this.props.product.productGroup.toLowerCase() === "wasser")) {
+         this.replacePoints();
          this.tlScoring(this.fatTlCalcDrinks(parseFloat(this.props.product.fett)), "fatBG");        
          this.tlScoring(this.satFatTlCalcDrinks(parseFloat(this.props.product.gesaettigteFettsaeuren)),"satFatBG");
          this.tlScoring(this.sugarsTlCalcDrinks(parseFloat(this.props.product.zucker)),"sugarBG");
          this.tlScoring(this.saltTlCalcDrinks(parseFloat(this.props.product.natrium*0.388)),"saltBG");                 
      }
      else if (this.props.error===0 && this.props.product.productGroup){
+         this.replacePoints();
          this.tlScoring(this.fatTlCalcFood(parseFloat(this.props.product.fett)), "fatBG");        
          this.tlScoring(this.satFatTlCalcFood(parseFloat(this.props.product.gesaettigteFettsaeuren)), "satFatBG");
          this.tlScoring(this.sugarsTlCalcFood(parseFloat(this.props.product.zucker)), "sugarBG");
