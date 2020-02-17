@@ -76,6 +76,7 @@ class CalcOffline extends Component {
                     <option value="sonstiges">alle anderen Lebensmittel</option>
                 </select>
                 <p>Bitte geben Sie die folgende Werte pro 100 g bzw. 100 ml ein:</p>
+        
                 <input type="text" value = {this.state.energie.value} name="energie" placeholder= {this.state.energie.placeholder} onChange={(e) => this.handleChange(e)} />
                 <input type="text" value = {this.state.zucker.value} name="zucker" placeholder={this.state.zucker.placeholder} onChange={(e) => this.handleChange(e)} />
                 <input type="text" value = {this.state.fett.value} name="fett" placeholder={this.state.fett.placeholder} onChange={(e) => this.handleChange(e)} />
