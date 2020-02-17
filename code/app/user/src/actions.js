@@ -4,8 +4,8 @@ export const loadProduct = (EAN) => async dispatch => {
         const result = await fetch(url);
         const data = await result.json();
         
-        // console.log(result)
-        // console.log(data)
+        console.log(result)
+        console.log(data)
     
         dispatch({
             type: 'LOAD_PRODUCT',

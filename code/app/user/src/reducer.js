@@ -1,6 +1,6 @@
 const initialState = {
         productFound: false,
-        product:{ id: 0, EAN: [], productname: null, hersteller : null, handelskette : null, productGroup: null, brennwertKCAL: null, kohlenhydrate : null, fett: null, gesaettigte_Fettsaeuren: null, natrium: null , protein: null, ballaststoffe: null, obstGemueseNuesseAnteil: null },
+        product:{ id: 0, EAN: [], productname: null, hersteller : null, handelskette : null, productGroup: null, brennwertKCAL: null, kohlenhydrate : null, zucker: null, fett: null, gesaettigteFettsaeuren: null, natrium: null , protein: null, ballaststoffe: null, obstGemueseNuesseAnteil: null },
         arrayOfFoundProducts: [],
         error: 0,
         message: null 
