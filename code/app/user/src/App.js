@@ -24,30 +24,25 @@ class App extends Component {
       <Router> 
         {this.props.productFound ?
             <Redirect to="/results" /> : null}
-
         <div className="mainApp">
-        <div className="changingAreaApp">
-          <Switch>
-              <Route exact path="/" component={StartPage} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/search" component={Search} />
-              <Route exact path="/scan" component={Scanner} />
-              <Route exact path="/calc" component={CalcOffline} />
-              <Route exact path="/results" component={Results} />
-              <Route component={NotFound} />
-
-          </Switch>
-        </div>
+          <div className="changingAreaApp">
+            <Switch>
+                <Route exact path="/" component={StartPage} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/scan" component={Scanner} />
+                <Route exact path="/calc" component={CalcOffline} />
+                <Route exact path="/results" component={Results} />
+                <Route component={NotFound} />
+            </Switch>
+          </div>
           <div className="navApp">
             <Navbar />
           </div>
-
         </div>
-
         <div className="footerApp">
           <Footer />
         </div>
-
       </Router>
     );
   }
