@@ -20,7 +20,8 @@ class SearchResults extends Component {
                 <p>Produktname: {this.props.product.productname}</p>
                 <p>Produktgruppe: {this.props.product.productGroup}</p>
                 <p>Brennwert in KCAL: {this.props.product.brennwertKCAL}</p>
-                <p>Kohlenhydrate (Zucker gesamt): {this.props.product.kohlenhydrate}</p>
+                <p>Kohlenhydrate (gesamt): {this.props.product.kohlenhydrate}</p>
+                <p>davon Zucker: {this.props.product.zucker}</p>
                 <p>Fett: {this.props.product.fett}</p>
                 <p>davon gesättigte Fettsäuren: {this.props.product.gesaettigteFettsaeuren}</p>
                 <p>Natrium : {this.props.product.natrium}</p>

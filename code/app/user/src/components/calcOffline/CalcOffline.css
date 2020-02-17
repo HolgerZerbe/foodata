@@ -1,5 +1,5 @@
 .calcDiv {
-    margin: 50px;
+    margin:10px;
     font-size: 1em;
     width: 100%;
     padding: 3px;
@@ -7,7 +7,7 @@
 
 .calcDiv input,
 .calcDiv select {
-    margin: 5px 0;
+    margin: 5px;
     display: block;
     min-width: 50%;
     font-size: 1em;

@@ -33,6 +33,7 @@ app.get('/product', async (req, res) => {
                             productGroup: foundproduct[0].productGroup,
                             brennwertKCAL: foundproduct[0].brennwertKCAL,
                             kohlenhydrate: foundproduct[0].kohlenhydrate,
+                            zucker: foundproduct[0].zucker,
                             fett: foundproduct[0].fett,
                             gesaettigte_Fettsaeuren: foundproduct[0].gesaettigte_Fettsaeuren,
                             natrium: foundproduct[0].natrium,
@@ -53,8 +54,15 @@ app.get('/product', async (req, res) => {
 app.get('/search', async (req, res) => {
     if (req.query) {
     
-        const allReqQueryQ = req.query.q.split(' ');
-        let foundProducts=[]
+        const splittedReqQueryQ = req.query.q.split(' ');
+        let allReqQueryQ = [];
+        for (let i=0; i<splittedReqQueryQ.length; i++) {
+            if (splittedReqQueryQ[i] !== "") {
+                allReqQueryQ.push(splittedReqQueryQ[i])
+            }
+        }
+
+        let foundProducts=[];
 
         if (allReqQueryQ.length===1) {
             foundProducts = await Product.find({$or:[{productname: {$regex: allReqQueryQ[0], $options: 'i'}},
@@ -88,8 +96,6 @@ app.get('/search', async (req, res) => {
             
         })
 
-        console.log(sortedProducts);
-
         if (sortedProducts.length>0) {
 
             let products =[];
@@ -122,6 +128,7 @@ app.get('/searchId', async (req, res) => {
                             productGroup: foundproduct[0].productGroup,
                             brennwertKCAL: foundproduct[0].brennwertKCAL,
                             kohlenhydrate: foundproduct[0].kohlenhydrate,
+                            zucker: foundproduct[0].zucker,
                             fett: foundproduct[0].fett,
                             gesaettigte_Fettsaeuren: foundproduct[0].gesaettigte_Fettsaeuren,
                             natrium: foundproduct[0].natrium,

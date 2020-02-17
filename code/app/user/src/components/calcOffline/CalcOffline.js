@@ -9,7 +9,7 @@ class CalcOffline extends Component {
     state = {
         produktgruppe: {value: "Sonstiges"},
         energie: {value: "", placeholder: "Brennwert in KCAL"},
-        kohlenhydrate: {value: "", placeholder: "Kohlenhydrate in g"},
+        zucker: {value: "", placeholder: "Zucker in g"},
         fett: {value: "", placeholder: "Fett in g"},
         gesaettigteFettsaeuren: {value: "", placeholder: "gesättigte Fettsäuren in g"},
         salz: {value: "", placeholder: "Salz in g"},
@@ -47,7 +47,7 @@ class CalcOffline extends Component {
                     productname: "Nicht angegeben",
                     productGroup: this.state.produktgruppe.value.toLowerCase(),
                     brennwertKCAL: this.state.energie.value.replace(',', '.'),
-                    kohlenhydrate: this.state.kohlenhydrate.value.replace(',', '.'),
+                    zucker: this.state.zucker.value.replace(',', '.'),
                     fett: this.state.fett.value.replace(',', '.'),
                     gesaettigteFettsaeuren: this.state.gesaettigteFettsaeuren.value.replace(',', '.'),
                     natrium : (Math.round(parseFloat(this.state.salz.value.replace(',', '.'))/2.54*10))/10,
@@ -77,7 +77,7 @@ class CalcOffline extends Component {
                 </select>
                 <p>Bitte geben Sie die folgende Werte pro 100 g bzw. 100 ml ein:</p>
                 <input type="text" value = {this.state.energie.value} name="energie" placeholder= {this.state.energie.placeholder} onChange={(e) => this.handleChange(e)} />
-                <input type="text" value = {this.state.kohlenhydrate.value} name="kohlenhydrate" placeholder={this.state.kohlenhydrate.placeholder} onChange={(e) => this.handleChange(e)} />
+                <input type="text" value = {this.state.zucker.value} name="zucker" placeholder={this.state.zucker.placeholder} onChange={(e) => this.handleChange(e)} />
                 <input type="text" value = {this.state.fett.value} name="fett" placeholder={this.state.fett.placeholder} onChange={(e) => this.handleChange(e)} />
                 <input type="text" value = {this.state.gesaettigteFettsaeuren.value} name="gesaettigteFettsaeuren" placeholder={this.state.gesaettigteFettsaeuren.placeholder} onChange={(e) => this.handleChange(e)} />
                 <input type="text" value = {this.state.salz.value} name="salz" placeholder={this.state.salz.placeholder} onChange={(e) => this.handleChange(e)} />

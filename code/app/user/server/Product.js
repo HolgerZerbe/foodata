@@ -9,6 +9,7 @@ const products = new Schema ({
     productGroup: String,
     brennwertKCAL: Number,
     kohlenhydrate: Number,
+    zucker: Number,
     fett: Number,
     gesaettigte_Fettsaeuren: Number,
     natrium: Number,
