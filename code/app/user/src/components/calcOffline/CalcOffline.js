@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {sendAwayToCalculate} from '../../actions';
@@ -19,8 +20,8 @@ class CalcOffline extends Component {
     }
 
     handleChange(e) {
-        let key = e.target.name;
-        this.setState({[key]: {value: e.target.value}});
+    
+        this.setState({[e.target.name]: {value: e.target.value}});
     }
     
     send = () => {
@@ -35,7 +36,7 @@ class CalcOffline extends Component {
             }
         }        
 
-                if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) <= 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
+                if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
                     this.setState({obstGemueseNuesse: {value:"",
                                     placeholder:"Bitte korrekte Prozentzahl eingeben"}})
                     return 
