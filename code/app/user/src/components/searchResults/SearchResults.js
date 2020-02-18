@@ -535,7 +535,11 @@ render() {
                 <p className="titleResults">Hersteller: {this.props.product.hersteller}</p>
                 <p className="titleResults">Produktname: {this.props.product.productname}</p>
 
-                <div>Nutriscore ist: {this.state.nutriscore}</div>
+                {this.state.nutriscore==="A" ? <div className="nutriscore">Nutriscore: {this.state.nutriscore}</div>:null}
+                {this.state.nutriscore==="B" ? <div className="nutriscore">Nutriscore: {this.state.nutriscore}</div>:null}
+                {this.state.nutriscore==="C" ? <div className="nutriscore">Nutriscore: {this.state.nutriscore}</div>:null}
+                {this.state.nutriscore==="D" ? <div className="nutriscore">Nutriscore: {this.state.nutriscore}</div>:null}
+                {this.state.nutriscore==="E" ? <div className="nutriscore">Nutriscore: {this.state.nutriscore}</div>:null}
             <div className="trafficLight">
                 <div className="singleTrafficLight">
                     <div className="light" style={{background: this.state.fatBG}}></div><div className="singleTrafficLightText">Fett: {this.fat} g</div></div>
@@ -548,8 +552,6 @@ render() {
 
             </div> 
 
-            <div>{this.props.product.ballaststoffe
-            }</div>
             </>
                 : <ErrorMessage fehlerNummer = {this.props.error}/>}
                 
