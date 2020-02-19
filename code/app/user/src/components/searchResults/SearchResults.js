@@ -112,8 +112,7 @@ class SearchResults extends Component {
 // 2.1.1 Calculation Nutri-score "Energy in kcal/g"
 
 energyNutriCalc = (energy) => {
-    console.log("energy = ")
-    console.log(energy)
+
     if(energy <= 80) {return 0}
     else if(energy >  80 && energy <= 160) {return 1}
     else if(energy > 160 && energy <= 240) {return 2}
@@ -298,9 +297,6 @@ nutriNVFOCalc = (energyInputArg,ratioFatsInputArg,sugarsInputArg,sodiumInputArg)
                     ratioFatsInputArg + 
                     sugarsInputArg + 
                     sodiumInputArg;  
-                    
-    console.log("nutriNVFO =")
-    console.log(nutriNVFO)
 
     return nutriNVFO;
 }
@@ -455,14 +451,14 @@ componentDidMount() {
          this.tlScoring(this.fatTlCalcDrinks(parseFloat(this.props.product.fett)), "fatBG");        
          this.tlScoring(this.satFatTlCalcDrinks(parseFloat(this.props.product.gesaettigteFettsaeuren)),"satFatBG");
          this.tlScoring(this.sugarsTlCalcDrinks(parseFloat(this.props.product.zucker)),"sugarBG");
-         this.tlScoring(this.saltTlCalcDrinks(parseFloat(this.props.product.natrium*0.388)),"saltBG");                 
+         this.tlScoring(this.saltTlCalcDrinks(parseFloat(this.props.product.natrium*2.54)),"saltBG");                 
      }
      else if (this.props.error===0 && this.props.product.productGroup){
          this.replacePoints();
          this.tlScoring(this.fatTlCalcFood(parseFloat(this.props.product.fett)), "fatBG");        
          this.tlScoring(this.satFatTlCalcFood(parseFloat(this.props.product.gesaettigteFettsaeuren)), "satFatBG");
          this.tlScoring(this.sugarsTlCalcFood(parseFloat(this.props.product.zucker)), "sugarBG");
-         this.tlScoring(this.saltTlCalcFood(parseFloat(this.props.product.natrium*0.388)), "saltBG");
+         this.tlScoring(this.saltTlCalcFood(parseFloat(this.props.product.natrium*2.54)), "saltBG");
     
     };
 
