@@ -7,7 +7,6 @@ import './CalcOffline.css';
 class CalcOffline extends Component {
  
     state = {
-        selectedOption: null,
         produktgruppe: {value: "Sonstiges"},
         energie: {value: "", placeholder: "Brennwert in KCAL"},
         zucker: {value: "", placeholder: "Zucker in g"},
@@ -23,10 +22,6 @@ class CalcOffline extends Component {
         this.setState({[e.target.name]: {value: e.target.value}});
     }
 
-    selecthandleChange = selectedOption => {
-        this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
-        };
     send = () => {
         for (let key in this.state) {
             if (key!=="produktgruppe" && key !=="obstGemueseNuesse") {
@@ -74,16 +69,25 @@ console.log(product)
     ] 
 
     render() {
-        const { selectedOption } = this.state;
+
         return (
             <div className="calcDiv">
                 <form>
-                    <ReactSelect 
-                        onChange={this.selecthandleChange}
+                <p>Bitte wählen Sie eine Produktgruppe:</p>
+
+                <select name="produktgruppe" onChange={(e) => this.handleChange(e)}>Bitte auswählen
+                    <option disabled>Bitte wähle eine Produktgruppe</option>
+                    <option value="wasser">Wasser</option>
+                    <option value="getraenk">andere Getränke</option>
+                    <option value="kaese">Käse</option>
+                    <option value="fette">Fette / Öle</option>
+                    <option value="sonstiges">alle anderen Lebensmittel</option>
+                </select>
+                    {/* <ReactSelect name="produktgruppe" onChange={(e) => this.handleChange(e)}
                         multi 
                         placeholder="Bitte wähle eine Produktgruppe:"
                         value={selectedOption}
-                        options={this.options}  /> 
+                        options={this.options}  />  */}
 
                     <p>Bitte gib die folgende Werte pro 100 g bzw. 100 ml ein:</p>
 
@@ -117,9 +121,7 @@ console.log(product)
                                 <span></span>
                                 Berechnen
                             </div>
-                
-
-                </div>
+                            </div>
         )
     }
 }
