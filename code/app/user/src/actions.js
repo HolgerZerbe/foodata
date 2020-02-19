@@ -4,8 +4,8 @@ export const loadProduct = (EAN) => async dispatch => {
         const result = await fetch(url);
         const data = await result.json();
         
-        // console.log(result)
-        // console.log(data)
+        console.log(result)
+        console.log(data)
     
         dispatch({
             type: 'LOAD_PRODUCT',
@@ -69,6 +69,16 @@ export const searchById = (id) => async dispatch => {
         
     }
 }
+
+export const sendAwayToCalculate = (product) => async dispatch => {
+
+    dispatch({
+        type: 'SEND_AWAY_TO_CALCULATE',
+        value: product
+    })
+}
+
+
 
 export const setProductFoundToFalse = () => async dispatch =>{
 
