@@ -207,7 +207,7 @@ healthyIngNutriCalc = (healthyIng) => {
 // 2.2.2 Calculation Nutri-score "fibres"
 
 fibresCalc = (fibres) => {
-    console.log(fibres)
+
     if(fibres <= 0.9) {return 0}
     else if(fibres > 0.9 && fibres <= 1.9) {return 1}
     else if(fibres > 1.9 && fibres <= 2.8) {return 2}
@@ -219,7 +219,7 @@ fibresCalc = (fibres) => {
 // 2.2.3 Calculation Nutri-score "proteins"
 
 proteinsCalc =(proteins) => {
-    // console.log(proteins)
+
 ;    if(proteins <= 1.6) {return 0}
     else if(proteins > 1.6 && proteins <= 3.2) {return 1}
     else if(proteins > 3.2 && proteins <= 4.8) {return 2}
@@ -282,15 +282,10 @@ healthyIngNutriDCalc = (healthyIng) => {
 
 nutriNFCalc = (energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg) => {
 
-    console.log(energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg )
-
     const nutriNF = energyInputArg + 
                     satFatInputArg + 
                     sugarsInputArg + 
                     sodiumInputArg;
-
-    console.log("nutriNF =")
-    console.log(nutriNF)
 
     return nutriNF;
 } 
@@ -319,8 +314,6 @@ nutriPFCalc = (healthyIngInputArg,fibresInputArg,proteinsInputArg) => {
                     fibresInputArg + 
                     proteinsInputArg;
 
-    console.log("nutriPF =")
-    console.log(nutriPF)
 
     return nutriPF;
 } 
@@ -331,8 +324,6 @@ nutriPFCalc = (healthyIngInputArg,fibresInputArg,proteinsInputArg) => {
 nutriPF11Calc = (healthyIngInputArg,fibresInputArg) => {
     const nutriPF11 = healthyIngInputArg + fibresInputArg;
 
-    console.log("nutriPF11 = ")
-    console.log(nutriPF11)
 
     return nutriPF11;
 } 
@@ -360,14 +351,11 @@ nutriNumFCalc = (healthyIngNutriArg,nutriNFArg,nutriNVFOArg,nutriPFArg,nutriPF11
 
     }
 
-    console.log("nutriNumF = ")
-    console.log(nutriNumF)
-
     return nutriNumF;
 }
 
 nutriScoreFCalc = (nutriNum) => {   
-    console.log(nutriNum)
+    
     if (nutriNum <= -1) {this.setState({nutriscore: "A"})}
     else if (nutriNum >= 0 && nutriNum <= 2) {this.setState({nutriscore: "B"})}
     else if (nutriNum >= 3 && nutriNum <= 10) {this.setState({nutriscore: "C"})}
@@ -381,9 +369,7 @@ nutriScoreFCalc = (nutriNum) => {
 nutriNumDCalc = ( energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg,healthyIngInputArg,fibresInputArg,proteinsInputArg) => {    
                            
                             const nutriPD = healthyIngInputArg + fibresInputArg + proteinsInputArg;
-                            
                             const nutriND = energyInputArg + satFatInputArg + sugarsInputArg + sodiumInputArg;
-                           
                             const nutriNumD = nutriND - nutriPD;
                            
                             return nutriNumD;
@@ -412,7 +398,6 @@ componentDidMount() {
     let category=null;
         if (this.props.error===0) {
             category = this.props.product.productGroup
-        console.log(category)
         } 
         if(this.props.error === 0 && this.props.product.productGroup && category.toLowerCase() === "wasser") {
             this.setState({nutriscore: "A"})}
@@ -432,11 +417,10 @@ componentDidMount() {
                     )
                 )
                 
-                    }
+            }
             
         else if (this.props.error === 0){
        
-
                 this.nutriScoreFCalc(
                     this.nutriNumFCalc(
                         this.healthyIngNutriCalc(parseFloat(this.props.product.obstGemueseNuesseAnteil)),
