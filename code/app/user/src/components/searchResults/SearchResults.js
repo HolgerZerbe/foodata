@@ -112,6 +112,8 @@ class SearchResults extends Component {
 // 2.1.1 Calculation Nutri-score "Energy in kcal/g"
 
 energyNutriCalc = (energy) => {
+    console.log("energy = ")
+    console.log(energy)
     if(energy <= 80) {return 0}
     else if(energy >  80 && energy <= 160) {return 1}
     else if(energy > 160 && energy <= 240) {return 2}
@@ -377,32 +379,13 @@ nutriScoreFCalc = (nutriNum) => {
 // 4. Calculation Nutri-score "nutriNumD + nutriScoreD (Drinks)"
 
 nutriNumDCalc = ( energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg,healthyIngInputArg,fibresInputArg,proteinsInputArg) => {    
-                            console.log(energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg,healthyIngInputArg,fibresInputArg,proteinsInputArg)
-
-                            console.log("this.healthyIngNutriDCalc(healthyIngInputArg) =")
-                            console.log(this.healthyIngNutriDCalc(healthyIngInputArg))
-                            console.log("this.fibresCalc(fibresInputArg) =")
-                            console.log(this.fibresCalc(fibresInputArg))
-                            console.log("this.proteinsCalc(proteinsInputArg) =")
-                            console.log(this.proteinsCalc(proteinsInputArg))
-                            console.log("this.energyNutriDCalc(energyInputArg) =")
-                            console.log(this.energyNutriDCalc(energyInputArg))
-                            console.log("this.satFatNutriCalc(satFatInputArg) =")
-                            console.log(this.satFatNutriCalc(satFatInputArg))
-                            console.log("this.sodiumNutriCalc(sodiumInputArg) =")
-                            console.log(this.sodiumNutriCalc(sodiumInputArg))
-
+                           
                             const nutriPD = healthyIngInputArg + fibresInputArg + proteinsInputArg;
                             
                             const nutriND = energyInputArg + satFatInputArg + sugarsInputArg + sodiumInputArg;
                            
                             const nutriNumD = nutriND - nutriPD;
-                            console.log("nutriND =")
-                            console.log(nutriND)
-                            console.log("nutriNP = ")
-                            console.log(nutriPD)
-                            console.log("nutriNumD =")
-                            console.log(nutriNumD)
+                           
                             return nutriNumD;
     
 }                       
@@ -435,24 +418,10 @@ componentDidMount() {
             this.setState({nutriscore: "A"})}
             
         else if(this.props.error === 0 && this.props.product.productGroup && category.toLowerCase() === "getraenk") {
-            // console.log('it is drinks');
-            // console.log(this.props.product)
-            // console.log(this.energyNutriDCalc(parseFloat(this.props.product.brennwertKCAL)))
-            // console.log(this.satFatNutriCalc(parseFloat(this.props.product.gesaettigteFettsaeuren)))
-            // console.log(this.sugarsNutriDCalc(parseFloat(this.props.product.zucker)))
-            // console.log(this.sodiumNutriCalc(parseFloat(this.props.product.natrium)))
-            // console.log(this.healthyIngNutriCalc(parseFloat(this.props.product.obstGemueseNuesseAnteil)))
-            // console.log(this.fibresCalc(parseFloat(this.props.product.ballaststoffe)))
-            // console.log(this.proteinsCalc(parseFloat(this.props.product.protein)))
-
-
-
-
-
 
                 this.nutriScoreDCalc(
                     this.nutriNumDCalc(
-                        // ( energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg,healthyIngInputArg,fibresInputArg,proteinsInputArg)
+
                         this.energyNutriDCalc(parseFloat(this.props.product.brennwertKCAL)),
                         this.satFatNutriCalc(parseFloat(this.props.product.gesaettigteFettsaeuren)),
                         this.sugarsNutriDCalc(parseFloat(this.props.product.zucker)),
@@ -466,26 +435,17 @@ componentDidMount() {
                     }
             
         else if (this.props.error === 0){
-    
-            // console.log('it is food');
-                console.log("this.healthyIngNutriCalc =")
-               
-                console.log("this.nutriNVFOCalc =")       
-                console.log(this.nutriNVFOCalc(
-                    this.energyNutriCalc(parseFloat(this.props.product.brennwertKCAL)),
-                    this.ratioFatsNutriCalc(parseFloat(this.props.product.fett),parseFloat(this.props.product.gesaettigteFettsaeuren)),
-                    this.sugarsNutriCalc(parseFloat(this.props.product.zucker)),
-                    this.sodiumNutriCalc(parseFloat(this.props.product.natrium))
-                        ))
-
-
+       
 
                 this.nutriScoreFCalc(
                     this.nutriNumFCalc(
                         this.healthyIngNutriCalc(parseFloat(this.props.product.obstGemueseNuesseAnteil)),
-                            this.nutriNFCalc(this.energyNutriCalc(parseFloat(this.props.product.brennwertKCAL)),this.satFatNutriCalc(parseFloat(this.props.product.gesaettigteFettsaeuren)),this.sugarsNutriCalc(parseFloat(this.props.product.zucker)),this.sodiumNutriCalc(parseFloat(this.props.product.natrium))
-                                    ),             
-                                    // energyInputArg,satFatInputArg,sugarsInputArg,sodiumInputArg                                               
+                            this.nutriNFCalc(
+                                this.energyNutriCalc(parseFloat(this.props.product.brennwertKCAL)),        
+                                this.satFatNutriCalc(parseFloat(this.props.product.gesaettigteFettsaeuren)),
+                                this.sugarsNutriCalc(parseFloat(this.props.product.zucker)),
+                                this.sodiumNutriCalc(parseFloat(this.props.product.natrium))
+                                    ),                                              
                             this.nutriNVFOCalc(
                                 this.energyNutriCalc(parseFloat(this.props.product.brennwertKCAL)),
                                 this.ratioFatsNutriCalc(parseFloat(this.props.product.fett),parseFloat(this.props.product.gesaettigteFettsaeuren)),
