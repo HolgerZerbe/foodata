@@ -2,7 +2,7 @@
     margin: 50px;
    /*  border: steelblue solid 1px; */
 }
-
+                            
 .trafficLight {
     display: flex;
     flex-direction: row;
