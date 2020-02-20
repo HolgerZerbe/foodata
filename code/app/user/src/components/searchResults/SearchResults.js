@@ -9,11 +9,11 @@ class SearchResults extends Component {
     
     state = {
         nutriscore: "Z",
-        colorStyle:['#32CD32','#ffbf00','#ff0000', '#cdd0d4'],
-        fatBG: `#cdd0d4`,
-        satFatBG: `#cdd0d4`,  
-        sugarBG: `#cdd0d4`,  
-        saltBG: `#cdd0d4`
+        colorStyle:['green','yellow','red', 'grey'],
+        fatBG: `grey`,
+        satFatBG: `grey`,  
+        sugarBG: `grey`,  
+        saltBG: `grey`
         
     }
     
@@ -483,22 +483,22 @@ render() {
             <div className="trafficLight">
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Fett: {this.fat} g</div>
-                    <TrafficLight />
+                    <TrafficLight blink={this.state.fatBG}/>
                     {/* <div className="light" style={{background: this.state.fatBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
                  <div className="singleTrafficLightText">Gesättigte Fette: {this.satFat} g</div>
-                    <TrafficLight />
+                    <TrafficLight blink={this.state.satFatBG}/>
                     {/* <div className="light" style={{background: this.state.satFatBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Zucker: {this.sugar} g</div>
-                    <TrafficLight />
+                    <TrafficLight blink={this.state.sugarBG}/>
                     {/* <div className="light" style={{background: this.state.sugarBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Salz: {this.salt} g</div>
-                    <TrafficLight />
+                    <TrafficLight blink={this.state.saltBG}/>
                    {/*  <div className="light" style={{background: this.state.saltBG}}></div>*/}
                 </div>
 

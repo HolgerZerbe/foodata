@@ -7,7 +7,12 @@ import './CalcOffline.css';
 class CalcOffline extends Component {
 
     state = {
+<<<<<<< HEAD
         produktgruppe: {value: "Sonstiges"},
+=======
+        selectedOption: "",
+        produktgruppe: {value: "Sonstiges",id:"",test:"1121"},
+>>>>>>> remotes/origin/ampel_komponente
         energie: {value: "", placeholder: "Brennwert in KCAL"},
         zucker: {value: "", placeholder: "Zucker in g"},
         fett: {value: "", placeholder: "Fett in g"},
@@ -22,18 +27,37 @@ class CalcOffline extends Component {
         this.setState({[e.target.name]: {value: e.target.value}});
     }
 
-<<<<<<< HEAD
-=======
     selecthandleChange = selectedOption => {
+<<<<<<< HEAD
         console.log(selectedOption)
 
         this.setState({produktgruppe: { value :selectedOption.value }});
+=======
+        console.log(this);
+        console.log(selectedOption);
+
+        this.setState({ selectedOption });
+
+        this.setState({ produktgruppe: selectedOption.value});
+        this.setState({ produktgruppe:{value:selectedOption.value,id:"selectedOption.value"}});
+        /* this.setState({ produktgruppe:{id:"selectedOption.value"}}); */
+
+        /* this.setState(produktgruppe.value = "test"); */
+
+        var produktgruppe ={ ...this.state.produktgruppe}
+        console.log(produktgruppe);
+        produktgruppe.test="00000";
+        this.setState({produktgruppe});
+>>>>>>> remotes/origin/ampel_komponente
         console.log(`Option selected:`, selectedOption);
         };
->>>>>>> newSelect
     send = () => {
+        console.log(this.state)
+        console.log(this.state.selectedOption.value)
+
         for (let key in this.state) {
             if (key!=="produktgruppe" && key !=="obstGemueseNuesse") {
+<<<<<<< HEAD
 
                 if (this.state[key].value.replace(',', '') != parseFloat(this.state[key].value.replace(',', ''))) {
                     this.setState({[key]: {value:"",
@@ -48,6 +72,20 @@ class CalcOffline extends Component {
                                     placeholder:"Bitte korrekte Prozentzahl eingeben"}})
                     return
                 }
+=======
+                if (this.state[key].value.replace(',', '') !== parseFloat(this.state[key].value.replace(',', ''))) {
+                    this.setState({[key]: {value:"",placeholder:"Bitte korrekte Zahl eingeben"}})
+                   /*  return; */
+                }  
+            }
+        }
+
+        if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
+            this.setState({obstGemueseNuesse: {value:"",
+                            placeholder:"Bitte korrekte Prozentzahl eingeben"}})
+            /* return; */
+        }             
+>>>>>>> remotes/origin/ampel_komponente
 
 
         const product = {
@@ -62,50 +100,38 @@ class CalcOffline extends Component {
                     protein:this.state.protein.value.replace(',', '.'),
                     ballaststoffe: this.state.ballaststoffe.value.replace(',', '.'),
                     obstGemueseNuesseAnteil: this.state.obstGemueseNuesse.value.replace(',', '.')
+<<<<<<< HEAD
         }
 console.log(product)
+=======
+        }    
+        console.log("product");
+        console.log(product); 
+>>>>>>> remotes/origin/ampel_komponente
 
         this.props.sendAwayToCalculate(product)
 
     }
 
      options=[
-        { label: "wasser", value: "wasser" },
+        { label: "Wasser", value: "wasser" },
         { label: "andere Getränke", value: "getraenk" },
         { label: "Käse", value: "kaese" },
         { label: "Fette / Öle", value:"fette" },
-        { label: "Sonstiges", value: "Alle anderen Lebensmittel" }
+        { label: "Alle anderen Lebensmittel",value: "Sonstiges" }
     ]
 
     render() {
-
+        const { selectedOption } = this.state;
         return (
             <div className="calcDiv">
                 <form>
-<<<<<<< HEAD
-                <p>Bitte wählen Sie eine Produktgruppe:</p>
-
-                <select name="produktgruppe" onChange={(e) => this.handleChange(e)}>Bitte auswählen
-                    <option disabled>Bitte wähle eine Produktgruppe</option>
-                    <option value="wasser">Wasser</option>
-                    <option value="getraenk">andere Getränke</option>
-                    <option value="kaese">Käse</option>
-                    <option value="fette">Fette / Öle</option>
-                    <option value="sonstiges">alle anderen Lebensmittel</option>
-                </select>
-                    {/* <ReactSelect name="produktgruppe" onChange={(e) => this.handleChange(e)}
-                        multi 
-                        placeholder="Bitte wähle eine Produktgruppe:"
-                        value={selectedOption}
-                        options={this.options}  />  */}
-=======
                     <ReactSelect
                         onChange={this.selecthandleChange}
                         multi
                         placeholder="Bitte wähle eine Produktgruppe:"
                         value={selectedOption}
                         options={this.options}  />
->>>>>>> newSelect
 
                     <p>Bitte gib die folgende Werte pro 100 g bzw. 100 ml ein:</p>
 
@@ -139,13 +165,9 @@ console.log(product)
                                 <span></span>
                                 Berechnen
                             </div>
-<<<<<<< HEAD
-                            </div>
-=======
 
 
                 </div>
->>>>>>> newSelect
         )
     }
 }

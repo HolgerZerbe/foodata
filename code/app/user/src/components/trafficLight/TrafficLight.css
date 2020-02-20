@@ -26,7 +26,7 @@
     background-color:#00FF00;
     filter: brightness(50%);
 }
-#red:hover{
+#redblink{
     transform: scale(1.5);
     animation-name: blink1;
     animation-duration: 1.1s;
@@ -34,14 +34,14 @@
     animation-iteration-count: infinite;
     animation-play-state: running;
 }
-#yellow:hover{
+#yellowblink{
     animation-name: blink2;
     animation-duration: 1.1s;
     animation-timing-function: step-end;
     animation-iteration-count: infinite;
     animation-play-state: running;
 }
-#green:hover{
+#greenblink{
     animation-name: blink3;
     animation-duration: 1.1s;
     animation-timing-function: step-end;
