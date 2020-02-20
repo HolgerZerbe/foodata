@@ -7,8 +7,8 @@ import './CalcOffline.css';
 class CalcOffline extends Component {
  
     state = {
-        selectedOption: null,
-        produktgruppe: {value: "Sonstiges"},
+        selectedOption: "",
+        produktgruppe: {value: "Sonstiges",id:"",test:"1121"},
         energie: {value: "", placeholder: "Brennwert in KCAL"},
         zucker: {value: "", placeholder: "Zucker in g"},
         fett: {value: "", placeholder: "Fett in g"},
@@ -24,26 +24,41 @@ class CalcOffline extends Component {
     }
 
     selecthandleChange = selectedOption => {
+        console.log(this);
+        console.log(selectedOption);
+
         this.setState({ selectedOption });
+
+        this.setState({ produktgruppe: selectedOption.value});
+        this.setState({ produktgruppe:{value:selectedOption.value,id:"selectedOption.value"}});
+        /* this.setState({ produktgruppe:{id:"selectedOption.value"}}); */
+
+        /* this.setState(produktgruppe.value = "test"); */
+
+        var produktgruppe ={ ...this.state.produktgruppe}
+        console.log(produktgruppe);
+        produktgruppe.test="00000";
+        this.setState({produktgruppe});
         console.log(`Option selected:`, selectedOption);
         };
     send = () => {
+        console.log(this.state)
+        console.log(this.state.selectedOption.value)
+
         for (let key in this.state) {
             if (key!=="produktgruppe" && key !=="obstGemueseNuesse") {
-            
-                if (this.state[key].value.replace(',', '') != parseFloat(this.state[key].value.replace(',', ''))) {
-                    this.setState({[key]: {value:"",
-                                            placeholder:"Bitte korrekte Zahl eingeben"}})
-                    return 
+                if (this.state[key].value.replace(',', '') !== parseFloat(this.state[key].value.replace(',', ''))) {
+                    this.setState({[key]: {value:"",placeholder:"Bitte korrekte Zahl eingeben"}})
+                   /*  return; */
                 }  
             }
-        }        
+        }
 
-                if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
-                    this.setState({obstGemueseNuesse: {value:"",
-                                    placeholder:"Bitte korrekte Prozentzahl eingeben"}})
-                    return 
-                }             
+        if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
+            this.setState({obstGemueseNuesse: {value:"",
+                            placeholder:"Bitte korrekte Prozentzahl eingeben"}})
+            /* return; */
+        }             
 
 
         const product = {
@@ -59,7 +74,8 @@ class CalcOffline extends Component {
                     ballaststoffe: this.state.ballaststoffe.value.replace(',', '.'),
                     obstGemueseNuesseAnteil: this.state.obstGemueseNuesse.value.replace(',', '.')
         }    
-console.log(product)
+        console.log("product");
+        console.log(product); 
 
         this.props.sendAwayToCalculate(product)
 

@@ -1,3 +1,8 @@
+
+/* 
+div{
+    border: 1px solid black;
+} */
 .searchResults_div{
     margin: 50px;
    /*  border: steelblue solid 1px; */
@@ -29,4 +34,14 @@
 
 .titleResults {
     font-size: 1.5em;
+}
+
+.nutriscore {
+   display: flex;
+   justify-content: center;
+
+}
+.nutriscore img{
+    width: 50%;
+    height: 20%;
 }
