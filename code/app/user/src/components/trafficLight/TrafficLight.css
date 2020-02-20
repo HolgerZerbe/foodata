@@ -1,0 +1,102 @@
+#traffic-light {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #333;
+    width:120px;
+    height:320px;
+    border-radius:30px;
+}
+#traffic-light div{
+    margin: 0 auto;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    border-radius: 100%;
+}
+#red{
+    background-color:#FF0000;
+    filter: brightness(50%);
+  }
+#yellow{
+    background-color:#FFFF00;
+    filter: brightness(50%);
+}
+#green{
+    background-color:#00FF00;
+    filter: brightness(50%);
+}
+#red:hover{
+    transform: scale(1.5);
+    animation-name: blink1;
+    animation-duration: 1.1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+#yellow:hover{
+    animation-name: blink2;
+    animation-duration: 1.1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+#green:hover{
+    animation-name: blink3;
+    animation-duration: 1.1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes blink1 {
+    0% {
+      background-color:#FF0000;
+      filter: brightness(150%);
+      box-shadow: 0 0 6em #FF0000;
+      transform: scale(1.5);
+    }
+
+    50% {
+        background-color:#FF0000;
+        filter: brightness(150%);
+        box-shadow: 0 0 0em #FF0000;
+        transform: scale(1);
+    }
+    
+}
+@keyframes blink2 {
+    0% {
+      background-color:#FFFF00;
+      filter: brightness(150%);
+      box-shadow: 0 0 6em #FFFF00;
+      transform: scale(1.5);
+
+    }
+    
+    50% {
+        background-color:#FFFF00;
+        filter: brightness(150%);
+        box-shadow: 0 0 0em #FFFF00;
+        transform: scale(1);
+
+    }
+    
+}
+@keyframes blink3 {
+    0% {
+      background-color:#00FF00;
+      filter: brightness(150%);
+      box-shadow: 0 0 6em #00FF00;
+      transform: scale(1.5);
+
+    }
+    
+    50% {
+        background-color:#00FF00;
+        filter: brightness(150%);
+        box-shadow: 0 0 0em #00FF00;
+        transform: scale(1);
+
+    }
+    
+}
