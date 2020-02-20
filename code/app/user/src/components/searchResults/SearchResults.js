@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './SearchResults.css';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import {setProductFoundToFalse} from '../../actions';
-
+import TrafficLight from '../trafficLight/TrafficLight';
 
 class SearchResults extends Component {
     
@@ -482,13 +482,25 @@ render() {
                 {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null}
             <div className="trafficLight">
                 <div className="singleTrafficLight">
-                    <div className="light" style={{background: this.state.fatBG}}></div><div className="singleTrafficLightText">Fett: {this.fat} g</div></div>
+                    <div className="singleTrafficLightText">Fett: {this.fat} g</div>
+                    <TrafficLight />
+                    {/* <div className="light" style={{background: this.state.fatBG}}></div>*/}
+                </div>
                 <div className="singleTrafficLight">
-                    <div className="light" style={{background: this.state.satFatBG}}></div><div className="singleTrafficLightText">Gesättigte Fette: {this.satFat} g</div></div>
+                 <div className="singleTrafficLightText">Gesättigte Fette: {this.satFat} g</div>
+                    <TrafficLight />
+                    {/* <div className="light" style={{background: this.state.satFatBG}}></div>*/}
+                </div>
                 <div className="singleTrafficLight">
-                    <div className="light" style={{background: this.state.sugarBG}}></div><div className="singleTrafficLightText">Zucker: {this.sugar} g</div></div>
-                <div className="singleTrafficLight"> 
-                    <div className="light" style={{background: this.state.saltBG}}></div><div className="singleTrafficLightText">Salz: {this.salt} g</div></div>
+                    <div className="singleTrafficLightText">Zucker: {this.sugar} g</div>
+                    <TrafficLight />
+                    {/* <div className="light" style={{background: this.state.sugarBG}}></div>*/}
+                </div>
+                <div className="singleTrafficLight">
+                    <div className="singleTrafficLightText">Salz: {this.salt} g</div>
+                    <TrafficLight />
+                   {/*  <div className="light" style={{background: this.state.saltBG}}></div>*/}
+                </div>
 
             </div> 
 

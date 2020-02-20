@@ -17,6 +17,7 @@ div{
 .singleTrafficLight {
     min-width: 21%;
     display: flex;
+    flex-direction: column;
     line-height: 56px;
 }
 
