@@ -5,9 +5,8 @@ import ReactSelect from "react-select";
 import './CalcOffline.css';
 
 class CalcOffline extends Component {
- 
+
     state = {
-        selectedOption: null,
         produktgruppe: {value: "Sonstiges"},
         energie: {value: "", placeholder: "Brennwert in KCAL"},
         zucker: {value: "", placeholder: "Zucker in g"},
@@ -24,26 +23,28 @@ class CalcOffline extends Component {
     }
 
     selecthandleChange = selectedOption => {
-        this.setState({ selectedOption });
+        console.log(selectedOption)
+
+        this.setState({produktgruppe: { value :selectedOption.value }});
         console.log(`Option selected:`, selectedOption);
         };
     send = () => {
         for (let key in this.state) {
             if (key!=="produktgruppe" && key !=="obstGemueseNuesse") {
-            
+
                 if (this.state[key].value.replace(',', '') != parseFloat(this.state[key].value.replace(',', ''))) {
                     this.setState({[key]: {value:"",
                                             placeholder:"Bitte korrekte Zahl eingeben"}})
-                    return 
-                }  
+                    return
+                }
             }
-        }        
+        }
 
                 if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
                     this.setState({obstGemueseNuesse: {value:"",
                                     placeholder:"Bitte korrekte Prozentzahl eingeben"}})
-                    return 
-                }             
+                    return
+                }
 
 
         const product = {
@@ -58,7 +59,7 @@ class CalcOffline extends Component {
                     protein:this.state.protein.value.replace(',', '.'),
                     ballaststoffe: this.state.ballaststoffe.value.replace(',', '.'),
                     obstGemueseNuesseAnteil: this.state.obstGemueseNuesse.value.replace(',', '.')
-        }    
+        }
 console.log(product)
 
         this.props.sendAwayToCalculate(product)
@@ -71,19 +72,19 @@ console.log(product)
         { label: "Käse", value: "kaese" },
         { label: "Fette / Öle", value:"fette" },
         { label: "Sonstiges", value: "Alle anderen Lebensmittel" }
-    ] 
+    ]
 
     render() {
         const { selectedOption } = this.state;
         return (
             <div className="calcDiv">
                 <form>
-                    <ReactSelect 
+                    <ReactSelect
                         onChange={this.selecthandleChange}
-                        multi 
+                        multi
                         placeholder="Bitte wähle eine Produktgruppe:"
                         value={selectedOption}
-                        options={this.options}  /> 
+                        options={this.options}  />
 
                     <p>Bitte gib die folgende Werte pro 100 g bzw. 100 ml ein:</p>
 
@@ -106,9 +107,9 @@ console.log(product)
                         <input type="text" value = {this.state.obstGemueseNuesse.value} name="obstGemueseNuesse" placeholder={this.state.obstGemueseNuesse.placeholder} onChange={(e) => this.handleChange(e)} />
 
                         <p>Wenn Sie den Anteil von Obst, Gemüse und Nüssen  oder an Ballaststoffen nicht kennen dann geben Sie bitte 0 ein<br />Die Berechnung des Nutriscores kann dann zwar erfolgen, aber er kann dadurch schlechter ausfallen</p>
-                        
-                    </div>    
-                
+
+                    </div>
+
                 </form>
                             <div onClick={()=>this.send()} className="animated-button">
                                 <span></span>
@@ -117,7 +118,7 @@ console.log(product)
                                 <span></span>
                                 Berechnen
                             </div>
-                
+
 
                 </div>
         )
