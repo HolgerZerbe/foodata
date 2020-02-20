@@ -5,7 +5,7 @@ import ReactSelect from "react-select";
 import './CalcOffline.css';
 
 class CalcOffline extends Component {
- 
+
     state = {
         produktgruppe: {value: "Sonstiges"},
         energie: {value: "", placeholder: "Brennwert in KCAL"},
@@ -22,23 +22,29 @@ class CalcOffline extends Component {
         this.setState({[e.target.name]: {value: e.target.value}});
     }
 
+    selecthandleChange = selectedOption => {
+        console.log(selectedOption)
+
+        this.setState({produktgruppe: { value :selectedOption.value }});
+        console.log(`Option selected:`, selectedOption);
+        };
     send = () => {
         for (let key in this.state) {
             if (key!=="produktgruppe" && key !=="obstGemueseNuesse") {
-            
+
                 if (this.state[key].value.replace(',', '') != parseFloat(this.state[key].value.replace(',', ''))) {
                     this.setState({[key]: {value:"",
                                             placeholder:"Bitte korrekte Zahl eingeben"}})
-                    return 
-                }  
+                    return
+                }
             }
-        }        
+        }
 
                 if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
                     this.setState({obstGemueseNuesse: {value:"",
                                     placeholder:"Bitte korrekte Prozentzahl eingeben"}})
-                    return 
-                }             
+                    return
+                }
 
 
         const product = {
@@ -53,7 +59,7 @@ class CalcOffline extends Component {
                     protein:this.state.protein.value.replace(',', '.'),
                     ballaststoffe: this.state.ballaststoffe.value.replace(',', '.'),
                     obstGemueseNuesseAnteil: this.state.obstGemueseNuesse.value.replace(',', '.')
-        }    
+        }
 console.log(product)
 
         this.props.sendAwayToCalculate(product)
@@ -61,33 +67,24 @@ console.log(product)
     }
 
      options=[
-        { label: "wasser", value: "wasser" },
+        { label: "Wasser", value: "wasser" },
         { label: "andere Getränke", value: "getraenk" },
         { label: "Käse", value: "kaese" },
         { label: "Fette / Öle", value:"fette" },
-        { label: "Sonstiges", value: "Alle anderen Lebensmittel" }
-    ] 
+        { label: "Alle anderen Lebensmittel",value: "Sonstiges" }
+    ]
 
     render() {
-
+        const { selectedOption } = this.state;
         return (
             <div className="calcDiv">
                 <form>
-                <p>Bitte wählen Sie eine Produktgruppe:</p>
-
-                <select name="produktgruppe" onChange={(e) => this.handleChange(e)}>Bitte auswählen
-                    <option disabled>Bitte wähle eine Produktgruppe</option>
-                    <option value="wasser">Wasser</option>
-                    <option value="getraenk">andere Getränke</option>
-                    <option value="kaese">Käse</option>
-                    <option value="fette">Fette / Öle</option>
-                    <option value="sonstiges">alle anderen Lebensmittel</option>
-                </select>
-                    {/* <ReactSelect name="produktgruppe" onChange={(e) => this.handleChange(e)}
-                        multi 
+                    <ReactSelect
+                        onChange={this.selecthandleChange}
+                        multi
                         placeholder="Bitte wähle eine Produktgruppe:"
                         value={selectedOption}
-                        options={this.options}  />  */}
+                        options={this.options}  />
 
                     <p>Bitte gib die folgende Werte pro 100 g bzw. 100 ml ein:</p>
 
@@ -110,9 +107,9 @@ console.log(product)
                         <input type="text" value = {this.state.obstGemueseNuesse.value} name="obstGemueseNuesse" placeholder={this.state.obstGemueseNuesse.placeholder} onChange={(e) => this.handleChange(e)} />
 
                         <p>Wenn Sie den Anteil von Obst, Gemüse und Nüssen  oder an Ballaststoffen nicht kennen dann geben Sie bitte 0 ein<br />Die Berechnung des Nutriscores kann dann zwar erfolgen, aber er kann dadurch schlechter ausfallen</p>
-                        
-                    </div>    
-                
+
+                    </div>
+
                 </form>
                             <div onClick={()=>this.send()} className="animated-button">
                                 <span></span>
@@ -121,7 +118,9 @@ console.log(product)
                                 <span></span>
                                 Berechnen
                             </div>
-                            </div>
+
+
+                </div>
         )
     }
 }
