@@ -17,7 +17,7 @@ import Card from "../card/Card"
         },
         {
             name: "Hans",
-            img:"../hans_1.png",
+            img:"../hans.png",
             description:"FULL-STACK DEVELOPER",
             img_ean:"../barcode_transparent_hans.png",
             email:"hannsheinrich@googlemail.com",
@@ -26,7 +26,7 @@ import Card from "../card/Card"
         },
         {
             name: "Holger",
-            img:"../holger.jpg",
+            img:"../holger.png",
             description:"FULL-STACK DEVELOPER",
             img_ean:"../barcode_transparent_holger.png",
             email:"Holger.Zerbe@web.de",
