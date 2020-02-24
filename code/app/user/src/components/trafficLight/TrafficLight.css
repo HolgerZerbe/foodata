@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: rgb(167, 173, 173);
+    /* background-color: rgb(167, 173, 173); */
+    background-color: rgb(113, 114, 114);
     width:120px;
     height:320px;
     border-radius:30px;
@@ -92,7 +93,7 @@
     0% {
       /* background-color:#00FF00; */
       background-color:#008341;
-      filter: brightness(120%);
+      filter: brightness(150%);
       /* box-shadow: 0 0 6em #00FF00; */
       box-shadow: 0 0 6em #008341;
       transform: scale(1.5);
@@ -102,7 +103,7 @@
     50% {
         /* background-color:#00FF00; */
         background-color:#008341;
-        filter: brightness(120%);
+        filter: brightness(150%);
         /* box-shadow: 0 0 0em #00FF00; */
         box-shadow: 0 0 0em #008341;
         transform: scale(1);
