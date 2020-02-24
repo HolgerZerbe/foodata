@@ -22,7 +22,7 @@ div{
 }
 
 .singleTrafficLightText {
-    margin-left: 10px;
+    text-align: center;
 }
 
 .light {
@@ -35,6 +35,7 @@ div{
 
 .titleResults {
     font-size: 1.5em;
+    text-align: center;
 }
 
 .nutriscore {
@@ -46,3 +47,26 @@ div{
     width: 50%;
     height: 20%;
 }
+
+@media (min-width: 990px) {
+    .singleTrafficLightText {
+    text-align: left;
+    margin-left: 10px;
+    }
+}
+
+@media (max-width: 663px) {
+    .titleSatFat {
+        font-size: 0.8em;
+    }
+}
+
+
+@media (max-width: 989px) {
+    .nutriscore img{
+        width: 75%;
+        height: 30%;
+    }
+}
+
+

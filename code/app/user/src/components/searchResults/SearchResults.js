@@ -472,8 +472,7 @@ render() {
             {this.props.error===0? 
             <>
            
-                <p className="titleResults">Hersteller: {this.props.product.hersteller}</p>
-                <p className="titleResults">Produktname: {this.props.product.productname}</p>
+                <p className="titleResults">{this.props.product.hersteller} {this.props.product.productname}</p>
 
                 {this.state.nutriscore==="A" ? <div className="nutriscore"><img src="a_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="B" ? <div className="nutriscore"><img src="b_nutriscore.png"></img></div>:null}
@@ -482,22 +481,22 @@ render() {
                 {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null}
             <div className="trafficLight">
                 <div className="singleTrafficLight">
-                    <div className="singleTrafficLightText">Fett: {this.fat} g</div>
+                    <div className="singleTrafficLightText">Fett:<br/>{this.fat} g</div>
                     <TrafficLight blink={this.state.fatBG}/>
                     {/* <div className="light" style={{background: this.state.fatBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
-                 <div className="singleTrafficLightText">Gesättigte Fette: {this.satFat} g</div>
+                 <div className="singleTrafficLightText"><span className ="titleSatFat">Gesättigte Fette:</span><br/>{this.satFat} g</div>
                     <TrafficLight blink={this.state.satFatBG}/>
                     {/* <div className="light" style={{background: this.state.satFatBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
-                    <div className="singleTrafficLightText">Zucker: {this.sugar} g</div>
+                    <div className="singleTrafficLightText">Zucker:<br/>{this.sugar} g</div>
                     <TrafficLight blink={this.state.sugarBG}/>
                     {/* <div className="light" style={{background: this.state.sugarBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
-                    <div className="singleTrafficLightText">Salz: {this.salt} g</div>
+                    <div className="singleTrafficLightText">Salz:<br/>{this.salt} g</div>
                     <TrafficLight blink={this.state.saltBG}/>
                    {/*  <div className="light" style={{background: this.state.saltBG}}></div>*/}
                 </div>

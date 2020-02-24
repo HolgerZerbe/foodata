@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #333;
+    background-color: rgb(167, 173, 173);
     width:120px;
     height:320px;
     border-radius:30px;
+    /* box-shadow: 10px 10px 5px grey; */
 }
 #traffic-light div{
     margin: 0 auto;
@@ -19,11 +20,12 @@
     filter: brightness(50%);
   }
 #yellow{
-    background-color:#FFFF00;
+    background-color:#FFCC01;
     filter: brightness(50%);
 }
 #green{
-    background-color:#00FF00;
+    /* background-color:#00FF00; */
+    background-color:#008341;
     filter: brightness(50%);
 }
 #redblink{
@@ -66,17 +68,21 @@
 }
 @keyframes blink2 {
     0% {
-      background-color:#FFFF00;
-      filter: brightness(150%);
-      box-shadow: 0 0 6em #FFFF00;
+      /* background-color:#FFFF00; */
+      background-color:#FFCC01;
+      filter: brightness(100%);
+      /* box-shadow: 0 0 6em #FFFF00; */
+      box-shadow: 0 0 6em #FFCC01;
       transform: scale(1.5);
 
     }
     
     50% {
-        background-color:#FFFF00;
-        filter: brightness(150%);
-        box-shadow: 0 0 0em #FFFF00;
+        /* background-color:#FFFF00; */
+        background-color:#FFCC01;
+        filter: brightness(100%);
+        /* box-shadow: 0 0 0em #FFFF00; */
+        box-shadow: 0 0 0em #FFCC01;
         transform: scale(1);
 
     }
@@ -84,19 +90,37 @@
 }
 @keyframes blink3 {
     0% {
-      background-color:#00FF00;
-      filter: brightness(150%);
-      box-shadow: 0 0 6em #00FF00;
+      /* background-color:#00FF00; */
+      background-color:#008341;
+      filter: brightness(120%);
+      /* box-shadow: 0 0 6em #00FF00; */
+      box-shadow: 0 0 6em #008341;
       transform: scale(1.5);
 
     }
     
     50% {
-        background-color:#00FF00;
-        filter: brightness(150%);
-        box-shadow: 0 0 0em #00FF00;
+        /* background-color:#00FF00; */
+        background-color:#008341;
+        filter: brightness(120%);
+        /* box-shadow: 0 0 0em #00FF00; */
+        box-shadow: 0 0 0em #008341;
         transform: scale(1);
 
     }
     
+}
+
+@media (max-width: 812px) {
+    #traffic-light {
+        max-width:70px;
+        height:320px;
+        margin: 0 auto;
+
+    }
+
+    #traffic-light div {
+        width: 40px;
+        height: 40px;
+    }
 }
