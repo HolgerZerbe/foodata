@@ -4,6 +4,7 @@ import './SearchResults.css';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import {setProductFoundToFalse} from '../../actions';
 import TrafficLight from '../trafficLight/TrafficLight';
+import NutriScore from '../nutriScore/NutriScore';
 
 class SearchResults extends Component {
     
@@ -474,11 +475,12 @@ render() {
            
                 <p className="titleResults">{this.props.product.hersteller} {this.props.product.productname}</p>
 
-                {this.state.nutriscore==="A" ? <div className="nutriscore"><img src="a_nutriscore.png"></img></div>:null}
+                <NutriScore nutriscore={this.state.nutriscore}/>
+                {/* {this.state.nutriscore==="A" ? <div className="nutriscore"><img src="a_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="B" ? <div className="nutriscore"><img src="b_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="C" ? <div className="nutriscore"><img src="c_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="D" ? <div className="nutriscore"><img src="d_nutriscore.png"></img></div>:null}
-                {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null}
+                {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null} */}
             <div className="trafficLight">
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Fett:<br/>{this.fat} g</div>
