@@ -1,0 +1,73 @@
+
+
+.searchResults_div{
+<<<<<<< HEAD
+    margin: 50px 0;
+=======
+    margin:  50px 0;
+   /*  border: steelblue solid 1px; */
+>>>>>>> remotes/origin/Nutri_Score_Komponte
+}
+                            
+.trafficLight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.singleTrafficLight {
+    min-width: 21%;
+    display: flex;
+    flex-direction: column;
+    line-height: 56px;
+}
+
+.singleTrafficLightText {
+    text-align: center;
+}
+
+.light {
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 5px 5px 3px grey;
+}
+
+.titleResults {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.nutriscore {
+   display: flex;
+   justify-content: center;
+
+}
+.nutriscore img{
+    width: 50%;
+    height: 20%;
+}
+
+@media (min-width: 990px) {
+    .singleTrafficLightText {
+    text-align: left;
+    margin-left: 10px;
+    }
+}
+
+@media (max-width: 663px) {
+    .titleSatFat {
+        font-size: 0.8em;
+    }
+}
+
+
+@media (max-width: 989px) {
+    .nutriscore img{
+        width: 75%;
+        height: 30%;
+    }
+}
+
+
