@@ -481,6 +481,7 @@ render() {
                 {this.state.nutriscore==="C" ? <div className="nutriscore"><img src="c_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="D" ? <div className="nutriscore"><img src="d_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null} */}
+            <h2 className="searchResults_h2">LEBENSMITTELAMPEL:</h2>
             <div className="trafficLight">
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Fett:<br/>{this.fat} g</div>
@@ -488,7 +489,7 @@ render() {
                     {/* <div className="light" style={{background: this.state.fatBG}}></div>*/}
                 </div>
                 <div className="singleTrafficLight">
-                 <div className="singleTrafficLightText"><span className ="titleSatFat">Gesättigte Fette:</span><br/>{this.satFat} g</div>
+                 <div className="singleTrafficLightText"><span className="titleSatFat">Gesättigte Fette:</span><br/>{this.satFat} g</div>
                     <TrafficLight blink={this.state.satFatBG}/>
                     {/* <div className="light" style={{background: this.state.satFatBG}}></div>*/}
                 </div>
