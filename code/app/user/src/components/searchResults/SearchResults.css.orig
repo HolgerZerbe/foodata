@@ -1,17 +1,18 @@
-.searchResults_div{
-    margin: 50px 0;
-}
-       
-.searchResults_h2 {
-    text-align: center;
-    color: grey;
-}
 
+
+.searchResults_div{
+<<<<<<< HEAD
+    margin: 50px 0;
+=======
+    margin:  50px 0;
+   /*  border: steelblue solid 1px; */
+>>>>>>> remotes/origin/Nutri_Score_Komponte
+}
+                            
 .trafficLight {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-left: 30px;
 }
 
 .singleTrafficLight {
@@ -34,11 +35,8 @@
 }
 
 .titleResults {
-    color:black;
     font-size: 1.5em;
     text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 .nutriscore {
@@ -61,12 +59,6 @@
 @media (max-width: 663px) {
     .titleSatFat {
         font-size: 0.8em;
-    }
-}
-
-@media (max-width: 768px) {
-    .trafficLight {
-        margin-left: 0;
     }
 }
 

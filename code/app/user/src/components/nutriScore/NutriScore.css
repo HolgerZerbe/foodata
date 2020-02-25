@@ -1,0 +1,114 @@
+.nutri_div{
+    margin: 0 auto;
+    width: 600px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.nutri_h2 {
+    text-align: center;
+    color: grey;
+}
+
+.nutri_span{ 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 72px;
+    color:white;
+    opacity: 0.4;
+    font-weight: 800;
+}
+.button {
+    width: 100px;
+    height: 150px; 
+    text-align: center;
+    line-height:150px;
+}
+.button_a{  
+    background-color:#008341 ;
+    border: solid none;
+    border-top-left-radius:40px;
+    border-bottom-left-radius: 40px;
+}
+.button_b{  
+    background-color:#86BC30 ;
+}
+.button_c{  
+    background-color:#FFCC01 ;
+}
+.button_d{  
+    background-color:#F18101 ;
+}
+.button_e{  
+    background-color:#E73F12 ;
+    border-top-right-radius:40px;
+    border-bottom-right-radius: 40px;
+}
+.blinken {
+    z-index:5;
+    color: white;
+    font-weight: 1000;
+    height: 200px;
+    text-align: center;
+    border: 4px solid white;
+    border-radius:50px;
+    line-height:200px; 
+    animation-name: pulse-grow;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+.gross_schrift{
+    font-size:100px;
+    opacity: 1.0;
+}
+@keyframes pulse-grow {
+    0%{
+         transform: scale(1.1);
+    }
+    to {
+        z-index: 7;
+        transform: scale(1.2);
+    }
+} 
+
+@media (max-width: 812px) {
+    .nutri_div{
+        width: 400px;
+        height: calc(250px/3*2);
+    }
+    .nutri_span{ 
+        font-size: 48px;
+    }
+    .button {
+        width: calc(100px/3*2);
+        height: 100px; 
+        text-align: center;
+        line-height:100px;
+    }
+
+    .button_a{  
+       
+        border-top-left-radius:calc(40px/3*2);
+        border-bottom-left-radius: calc(40px/3*2);
+    }
+    .button_e{  
+        border-top-right-radius: calc(40px/3*2);
+        border-bottom-right-radius: calc(40px/3*2);
+    }
+    .blinken {
+        height: calc(200px/3*2);
+        text-align: center;
+        border: 4px solid white;
+        border-radius:50px;
+        line-height:calc(200px/3*2); 
+
+    }
+    .gross_schrift{
+        font-size:calc(100px/3*2);
+    }
+}

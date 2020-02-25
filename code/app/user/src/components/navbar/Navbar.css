@@ -28,17 +28,17 @@
 } */
 
 .ln1:hover {
-    background-color: red;
+    background-color: #E73F12;
     color: white;
 }
 
 .ln2:hover {
-    background-color: goldenrod;
+    background-color: #FFCC01;
     color: white;
 }
 
 .ln3:hover {
-    background-color:green;
+    background-color: #008341;
     color: white;
 }
 
