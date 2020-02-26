@@ -14,7 +14,7 @@ function Card (props){
                         <img src={props.img} className="img-2" alt="Person"/>
                     </div>
                     <h2>{props.name}</h2>
-                    <h5>{props.description}</h5>
+                    <h4 className="dev_description">{props.description}</h4>
                     <div className="font_icons">
                         <a className="icon" href={props.github}>          <FontAwesomeIcon icon={faGithub}   size="3x"  color="black" /></a>
                         <a className="icon" href={props.linkedin}>        <FontAwesomeIcon icon={faLinkedin} size="3x"  color="black" /></a>

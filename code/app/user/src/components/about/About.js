@@ -39,7 +39,7 @@ import Card from "../card/Card"
     render() {
         return (
             <div className="about_div">
-                <h1> Team Foodata </h1>
+                <h1 className="about_div_h1"> Team foodata </h1>
                 <div className="photo_div">
                     {this.state.devs.map((element, index) => 
                     <Card 
@@ -54,23 +54,37 @@ import Card from "../card/Card"
                     />)}
                 </div>
                 <div className="about_text">
-                    <h2>About Foodata </h2><br/>
-                        <div>
-                            <strong>Foodata – Deine Lebenmittel-Ampel-App</strong>
-                            <br/>is a web application which gives you the opportunity to scan products and show their nurtiscore,so you can easily decide, which food can be part of your healty eating.<br/>
-                            Users have also the opportunity to find products by productname 
-                            or to calculate the nutriscore by themselves if they ar not online.<br/>
-                            And of course this app is responsive for using it on your phone.<br/><br/>
-                            For this school project, the following technologies were used:<br/>
-                            <ul>
-                                <li>- ReactJS with the Redux.</li>
-                                <li>- JavaScript including HTML and CSS</li>
-                                <li>- NodeJs and a Mongoose Schema to interacting with the MongoDB database</li>
-                                <li>- NodeJS Express</li>
-                                <li>- Thunk middleware</li>
-                                <li>- Router and Switch to switch between components</li>
-                                <li>- FETCH to perform HTML requests.</li>
-                            </ul>
+                <div className="line"></div>
+                <div>
+                        <h2 className="headline-text">Über die Entwicklung dieser App </h2>
+                        <p>
+                            Diese App ist das Abschlussprojekt unserer Ausbildung zum Web-Developer am  Digital Career Institute (DCI) Berlin.
+                        </p>
+                        <p>
+                            Unser Ziel war, eine Anwendung zu programmieren die einen praktischen Nutzen für alle Menschen hat. Sie sollte responsiv und von allen Nutzern – egal ob auf dem Smartphone oder dem Desktop – auf einfache, schnelle und intuitive Weise zu bedienen sein.
+                        </p>
+                        <br/>
+                        <div className="line"></div>
+                        <div className="code-tools">
+                                <h2 className="headline-text headline-text-zwei">Diese Technologien wurden verwendet:</h2>
+                                <div className="code-tools-list">
+                                    <div className="code-tools-links">
+                                        <ul>
+                                            <li> HTML, CSS und JavaScript</li>
+                                            <li> ReactJS mit Redux und Thunk Middleware</li>
+                                            <li> Router und Switch zum Wechseln zwischen den Komponten</li>
+                                        </ul>
+                                    </div>
+                                    <div className="code-tools-rechts">
+                                </div>
+                                    <ul>
+                                        <li> NodeJs</li>
+                                        <li> MongoDB mit einem Mongoose Schema</li>
+                                        <li> FETCH to perform HTML requests.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                             </div>
                 </div>
             </div>

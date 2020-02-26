@@ -9,9 +9,10 @@
     margin-top: 20px;
 }
 
-.sep h5{
-    padding-top: 5px;
-    color: rgb(167, 173, 173);;
+.dev_description {
+    padding-top: 0;
+    margin-top: 0;
+    color: rgb(66, 68, 68);;
 }
 .sep .image-hover {
     display: inline-block; 
@@ -23,7 +24,7 @@
 .font_icons{
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .image-hover {
     margin: 10px;
