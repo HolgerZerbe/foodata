@@ -1,0 +1,14 @@
+.info-faq {
+    padding: 5% 10%;
+    margin: 0 auto;
+}
+
+.link-extern {
+    text-decoration: none;
+    color: red;
+    
+}
+
+.link-extern:visited {
+    color: red;
+}
