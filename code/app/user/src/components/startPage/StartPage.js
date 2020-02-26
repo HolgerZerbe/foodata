@@ -5,10 +5,9 @@ class StartPage extends Component {
     render() {
         return (
             <div className="startPage">
-                <p className="welcome">Willkommen bei </p>
-                <div className="startPageLogo"><img src="../foodata_logo_version_1.png" alt="logo" /></div>
-                <p className="welcome">Deiner Lebensmittelampel-App </p>
-                
+                <div className="welcome">Willkommen bei </div>
+                <div className="startPageLogo"><img src="../logo_20.png" alt="logo" /></div>
+                <div className="welcome">Deiner Lebensmittelampel-App </div>
             </div>
         )
     }
