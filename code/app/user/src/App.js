@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
+import InfoFaq from './components/infoFaq/InfoFaq';
 import CalcOffline from './components/calcOffline/CalcOffline';
 import StartPage from './components/startPage/StartPage';
 import NotFound from './components/notFound/NotFound';
@@ -29,6 +30,7 @@ class App extends Component {
             <Switch>
                 <Route exact path="/" component={StartPage} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/info" component={InfoFaq} />
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/scan" component={Scanner} />
                 <Route exact path="/calc" component={CalcOffline} />
