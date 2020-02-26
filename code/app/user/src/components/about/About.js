@@ -80,7 +80,7 @@ import Card from "../card/Card"
                                     <ul>
                                         <li> NodeJs</li>
                                         <li> MongoDB mit einem Mongoose Schema</li>
-                                        <li> FETCH to perform HTML requests.</li>
+                                        <li> FETCH um HTML requests zu händeln.</li>
                                     </ul>
                                 </div>
                             </div>
