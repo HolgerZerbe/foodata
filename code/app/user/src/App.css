@@ -31,7 +31,7 @@ div{
 }
 .footerApp {
   height: 20%;
-  background: rgb(113, 114, 114) !important;
+  background: rgb(167, 173, 173) !important;
 }
 @media only screen and (max-width: 767px) {
   .mainApp {

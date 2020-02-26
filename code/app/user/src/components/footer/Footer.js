@@ -10,7 +10,6 @@ class Footer extends Component {
             <div className="footerjs">
                 <div className="row row_links ">
                     <div className="features">
-                            <h1>Features:</h1>
                             <ul className="list-unstyled quick-links">
                                 <li><Link  className="fa" to="/">>> Home</Link></li>
                                 <li><Link  className="fa" to="/about">>> About</Link></li>
@@ -19,14 +18,14 @@ class Footer extends Component {
                     </div>
                     <div className="logo">
                         <Link to="/">
-                            <img src="../foodata_logo_version_1.png" alt="logo" />
+                            <img src="../logo_footer_21.png" alt="logo" />
                         </Link>
                     </div>
                     <div className="features">
-                            <h1>Address:</h1>
                             <ul className="list-unstyled">
-                                <li> DCI Digital Career Institute, Berlin</li>
-                                <li>Vulkanstraße 1, 10367 Berlin</li>
+                                <li>DCI Digital Career Institute, Berlin</li>
+                                <li>Vulkanstraße 1</li>
+                                <li>10367 Berlin</li>
                             </ul>
                            
                          

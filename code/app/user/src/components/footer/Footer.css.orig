@@ -3,17 +3,24 @@
 div , ul, li, img,a {
     box-sizing: border-box;
 }
+.footerjs{
+    background-color: rgb(167, 173, 173);
+    height: 100%;
+}
 .row_links .features,.row_links .address{
     display: flex;
 }
 .features a {
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.footerjs h1, .footerjs li{
+<<<<<<< HEAD
+.footerjs h1 , .footerjs li{
+    color:#ffffff;
+=======
+.footerjs h1 ,li{
     color:black;
+>>>>>>> remotes/origin/neues_logo
 }
-
 .footerjs  .fa{
     color: black;
     text-decoration: none !important;
