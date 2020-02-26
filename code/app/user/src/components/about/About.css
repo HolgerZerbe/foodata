@@ -3,10 +3,10 @@
     flex-wrap: wrap;
     box-sizing: border-box;
 }
-.about_div h1{
+.about_div_h1{
     width: 100%;
     text-align: center;
-    margin: 20px auto;
+    margin: 5% auto 2% auto;
 }
 .photo_div{
     width: 100%;
@@ -15,16 +15,22 @@
     justify-content: center;
 }
 .about_text{
-    width: 60%;
+    width: 75%;
     margin :0 auto;
     text-align: left;
 }
 .about_div ul {
-    margin-bottom: 20px;
+    margin: -15px 10px 5% -20px;
 }
-.about_text ul li{
-    list-style-type: none;
+
+.line {
+    border-bottom: 1px solid grey;
 }
+
+.code-tools-list {
+    display: flex;
+}
+
 @media only screen and (max-width: 767px) {
     .photo_div{
         flex-wrap: wrap;

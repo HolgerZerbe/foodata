@@ -9,7 +9,7 @@ div , ul, li, img,a {
 .features a {
     font-family: Arial, Helvetica, sans-serif;
 }
-.footerjs h1 ,li{
+.footerjs h1 , .footerjs li{
     color:#ffffff;
 }
 .footerjs  .fa{
