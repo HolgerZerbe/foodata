@@ -73,6 +73,7 @@ import Card from "../card/Card"
                                             <li> HTML, CSS und JavaScript</li>
                                             <li> ReactJS mit Redux und Thunk Middleware</li>
                                             <li> Router und Switch zum Wechseln zwischen den Komponten</li>
+                                            <li> QuaggaJS als Barcode-Reader </li>
                                         </ul>
                                     </div>
                                     <div className="code-tools-rechts">
@@ -80,7 +81,7 @@ import Card from "../card/Card"
                                     <ul>
                                         <li> NodeJs</li>
                                         <li> MongoDB mit einem Mongoose Schema</li>
-                                        <li> FETCH um HTML requests zu händeln.</li>
+                                        <li> FETCH um HTML Requests zu händeln.</li>
                                     </ul>
                                 </div>
                             </div>
