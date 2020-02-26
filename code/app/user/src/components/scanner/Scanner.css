@@ -64,25 +64,22 @@ div{
 }
 #interactive.viewport .anim-box .scanner{
   width: 100%;
-	height: 0.5px;
-	background-color: #b90606ff;
+	height: 3px;
+  background-image: linear-gradient( white,greenyellow );
   opacity:1;
   position:relative;
-  box-shadow: 0px 0px 0.5px 0.5px #b90606ff; 
-  top: 50%;
+  box-shadow: 0px -6px 15px 3px greenyellow;
   animation-name: scan;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: running;
  }
  @keyframes scan {
   0% {
-    box-shadow: 0px 0px 0.5px 0.5px #b90606ff; 
     top: 0%;
   }  
   100% {
-    box-shadow: 0px 0px 0.5px 0.5px #b90606ff; 
     top: 100%;
   }
 }
