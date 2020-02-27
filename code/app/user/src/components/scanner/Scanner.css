@@ -83,3 +83,9 @@ div{
     top: 100%;
   }
 }
+
+@media (max-width: 767px) {
+  .ScannerApp {
+    margin: 100px auto;
+  }
+}

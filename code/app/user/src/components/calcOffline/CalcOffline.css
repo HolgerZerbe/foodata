@@ -223,4 +223,9 @@ form {
     }
   }
   
+  @media (max-width: 660px) {
+    .animated-button {
+      font-size: 1.2em;
+    }
+  }
   

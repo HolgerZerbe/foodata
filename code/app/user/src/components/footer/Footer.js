@@ -37,7 +37,9 @@ class Footer extends Component {
                             <li ><Link to="/about"><i className="fa fa-twitter"></i></Link></li>
                             <li ><Link to="/about"><i className="fa fa-instagram"></i></Link></li>
                             <li ><Link to="/about"><i className="fa fa-google-plus"></i></Link></li>
-                            <li ><Link to="/about"><i className="fa fa-envelope"></i></Link></li>
+                            <li ><a  href="mailto:kontakt@foodata.info"><i className="fa fa-envelope"   ></i></a></li>
+                            
+
                         </ul>
                 </div>
             </div>

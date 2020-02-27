@@ -1,6 +1,6 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-div , ul, li, img,a {
+div , ul, li, img {
     box-sizing: border-box;
 }
 .row_links .features,.row_links .address{
@@ -30,6 +30,7 @@ div , ul, li, img,a {
 }
 .footerjs .list-unstyled{
     list-style-type: none;
+    margin-left: -35px;
 }
 .footerjs .address{
     color: #ffffff;
@@ -79,7 +80,7 @@ div , ul, li, img,a {
     }
     .footerjs  .row{
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         text-align: center;
     }
     .footerjs .logo{
@@ -96,4 +97,6 @@ div , ul, li, img,a {
 
         order: 3;
     }
+
+
 }

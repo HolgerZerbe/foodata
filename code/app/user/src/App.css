@@ -19,7 +19,8 @@ div{
   display: flex;
   justify-content: space-around;
   width: 100%;
-  min-height: 80%;
+  height: 80%;
+  overflow-y: scroll;
 }
 .navApp {
   width: 28%;
@@ -33,6 +34,10 @@ div{
 .footerApp {
   height: 20%;
   background: rgb(167, 173, 173) !important;
+  transform: translate3d(0,0,0);
+  position: sticky;
+  bottom: 0;
+
 }
 @media only screen and (max-width: 767px) {
   .mainApp {
@@ -42,8 +47,8 @@ div{
     justify-content: none;
   }
   .changingAreaApp {
-    min-height: 70%;
     height: auto;
+    min-height: 60vh;
     width: 100%;
     max-width: 100%;
   }
