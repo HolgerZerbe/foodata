@@ -70,7 +70,7 @@ console.log(product)
         { label: "Wasser", value: "wasser" },
         { label: "andere Getränke", value: "getraenk" },
         { label: "Käse", value: "kaese" },
-        { label: "vegetarische Fette & Öle", value:"fette" },
+        { label: "pflanzliche Fette & Öle", value:"fette" },
         { label: "Alle anderen Lebensmittel",value: "Sonstiges" }
     ]
 
