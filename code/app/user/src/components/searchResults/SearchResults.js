@@ -481,7 +481,7 @@ render() {
                 {this.state.nutriscore==="C" ? <div className="nutriscore"><img src="c_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="D" ? <div className="nutriscore"><img src="d_nutriscore.png"></img></div>:null}
                 {this.state.nutriscore==="E" ? <div className="nutriscore"><img src="e_nutriscore.png"></img></div>:null} */}
-            <h2 className="searchResults_h2">LEBENSMITTELAMPEL:</h2>
+            <h2 className="searchResults_h2">LEBENSMITTELAMPEL ( pro 100g oder 100ml ) :</h2>
             <div className="trafficLight">
                 <div className="singleTrafficLight">
                     <div className="singleTrafficLightText">Fett:<br/>{this.fat} g</div>

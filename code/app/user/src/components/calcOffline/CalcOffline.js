@@ -23,10 +23,10 @@ class CalcOffline extends Component {
     }
 
     selecthandleChange = selectedOption => {
-        console.log(selectedOption)
+        // console.log(selectedOption)
 
         this.setState({produktgruppe: { value :selectedOption.value }});
-        console.log(`Option selected:`, selectedOption);
+        // console.log(`Option selected:`, selectedOption);
         };
     send = () => {
         for (let key in this.state) {
@@ -40,7 +40,7 @@ class CalcOffline extends Component {
             }
         }
 
-                if ((this.state.obstGemueseNuesse.value.replace(',', '') === parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
+                if ((this.state.obstGemueseNuesse.value.replace(',', '') != parseFloat(this.state.obstGemueseNuesse.value.replace(',', '')) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) < 0) || (parseFloat(this.state.obstGemueseNuesse.value.replace(',', '.')) >= 100))) {
                     this.setState({obstGemueseNuesse: {value:"",
                                     placeholder:"Bitte korrekte Prozentzahl eingeben"}})
                     return
@@ -48,8 +48,8 @@ class CalcOffline extends Component {
 
 
         const product = {
-                    hersteller: "Nicht angegeben",
-                    productname: "Nicht angegeben",
+                    hersteller: "Produkt",
+                    productname: "selbst berechnet",
                     productGroup: this.state.produktgruppe.value.toLowerCase(),
                     brennwertKCAL: this.state.energie.value.replace(',', '.'),
                     zucker: this.state.zucker.value.replace(',', '.'),
@@ -70,7 +70,7 @@ console.log(product)
         { label: "Wasser", value: "wasser" },
         { label: "andere Getränke", value: "getraenk" },
         { label: "Käse", value: "kaese" },
-        { label: "Fette / Öle", value:"fette" },
+        { label: "vegetarische Fette & Öle", value:"fette" },
         { label: "Alle anderen Lebensmittel",value: "Sonstiges" }
     ]
 
