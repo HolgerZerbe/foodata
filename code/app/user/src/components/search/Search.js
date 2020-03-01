@@ -12,8 +12,8 @@ class Search extends Component {
     render() {
 
         return (
-            <>  
-                <div className="inputSearch">
+            <div className="div_searchjs">
+                 <div className="inputSearch">
                     <input type="text" placeholder="Geben Sie bis zu drei Suchbegriffe ein" autoFocus onChange={(e) => (e.target.value.length>2 ? this.props.searchProduct(e.target.value) : this.props.emptyArrayOfFoundProducts())}></input>
                     <p>Die Suche startet automatisch nach<br />der Eingabe von mindestens drei Zeichen...</p>
                 </div>
@@ -28,7 +28,7 @@ class Search extends Component {
                 </table>
                         {this.props.arrayOfFoundProducts && this.props.arrayOfFoundProducts.length>0 ? <p className="searchInfo">Bitte auf den entsprechende Artikel klicken</p> : null}
                 </div>
-            </>
+            </div>
         )
     }
 }

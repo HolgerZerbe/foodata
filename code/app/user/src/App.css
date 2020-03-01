@@ -47,14 +47,18 @@ div{
     justify-content: none;
   }
   .changingAreaApp {
+    display: flex;
+    align-items: center;
     height: auto;
     min-height: 60vh;
     width: 100%;
     max-width: 100%;
   }
   .navApp {
+   /*  position: sticky; */
     width: 100%;
-    height: auto;
+    margin-bottom: 3%;
+    height: auto; 
   }
   .footerApp {
     height: auto;
