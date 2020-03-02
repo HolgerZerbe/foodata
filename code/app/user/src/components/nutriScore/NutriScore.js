@@ -7,7 +7,7 @@ import './NutriScore.css'
     return (
         <>
         <h2 className="nutri_h2">NUTRI-SCORE</h2>
-        <div class="nutri_div">
+        <div className="nutri_div">
                 {props.nutriscore==="A" ? <div  className="button blinken button_a"><span className="gross_schrift">A</span></div> :<div  className="button button_a"><span className="nutri_span">A</span></div>}
                 {props.nutriscore==="B" ? <div  className="button blinken button_b"><span className="gross_schrift">B</span></div> :<div  className="button button_b"><span className="nutri_span">B</span></div>}
                 {props.nutriscore==="C" ? <div  className="button blinken button_c"><span className="gross_schrift">C</span></div> :<div  className="button button_c"><span className="nutri_span">C</span></div>}
