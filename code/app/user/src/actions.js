@@ -1,6 +1,10 @@
+import config from "./config.json";
+
+
+
 export const loadProduct = (EAN) => async dispatch => {
     try {
-        const url = '/product?ean='+EAN
+        const url = config.host+'/product?ean='+EAN
         const result = await fetch(url);
         const data = await result.json();
         
@@ -24,7 +28,7 @@ export const loadProduct = (EAN) => async dispatch => {
 
 export const searchProduct = (string) => async dispatch => {
     try {
-        const url = '/search?q='+string
+        const url = config.host+'/search?q='+string
         const result = await fetch(url);
         const data = await result.json();
 
@@ -48,7 +52,7 @@ export const searchProduct = (string) => async dispatch => {
 
 export const searchById = (id) => async dispatch => {
     try {
-        const url = '/searchId?id='+id
+        const url = config.host+'/searchId?id='+id
         const result = await fetch(url);
         const data = await result.json();
         

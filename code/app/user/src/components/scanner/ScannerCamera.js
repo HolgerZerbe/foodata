@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import config from "./config.json";
+import config from "./configScan.json";
 import Quagga from "quagga";
 
 const ScannerCamera = props => {

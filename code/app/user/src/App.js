@@ -13,7 +13,8 @@ import StartPage from './components/startPage/StartPage';
 import NotFound from './components/notFound/NotFound';
 import Search from './components/search/Search';
 import Scanner from './components/scanner/Scanner';
-import Results from './components/searchResults/SearchResults'
+import Results from './components/searchResults/SearchResults';
+import config from "./config.json";
 
 
 class App extends Component {
