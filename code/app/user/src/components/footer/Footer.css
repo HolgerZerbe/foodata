@@ -36,6 +36,8 @@ div , ul, li, img {
 .footerjs .list-unstyled{
     list-style-type: none;
     margin-left: -35px;
+   
+
 }
 .footerjs .address{
     color: #ffffff;
@@ -84,23 +86,46 @@ div , ul, li, img {
     margin-bottom: 10px;
     }
     .footerjs  .row{
+        flex-direction: column;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        align-items: center;
         text-align: center;
     }
     .footerjs .logo{
         order: 1;
         width: 100%;
-        margin: 0 50px;
+        /* margin: 0 50px; */
     }
     .footerjs .features{
         display: block;
         order: 2;
+        margin: 3px;
+        padding: none;
+        height: 20px;
     }
     .footerjs .address{
         display: block;
         order: 3;
     }
 
+    .footerjs .list-unstyled {
+        display: flex;
+        justify-content: space-around;
 
+    }
+
+    .footerjs .list-unstyled li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .disabled {
+        display: none;
+    }
+    .logo {
+        margin-bottom: none;
+    }
+    .quick-links {
+        margin-top: -3px;
+    }
 }

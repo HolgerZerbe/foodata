@@ -23,15 +23,15 @@ class Footer extends Component {
                     </div>
                     <div className="features">
                             <ul className="list-unstyled">
-                                <li>DCI Digital Career Institute, Berlin</li>
-                                <li>Vulkanstraße 1</li>
+                                <li>DCI Digital Career Institute, Berlin </li>
+                                <li>Vulkanstraße 1 </li>
                                 <li>10367 Berlin</li>
                             </ul>
                            
                          
                     </div>
                 </div>
-                <div className="row">
+                <div className="row disabled">
                         <ul className="list-unstyled list-inline social text-center">
                             <li ><Link to="/about"><i className="fa fa-facebook"></i></Link></li>
                             <li ><Link to="/about"><i className="fa fa-twitter"></i></Link></li>

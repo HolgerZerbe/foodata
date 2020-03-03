@@ -65,9 +65,12 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .trafficLight {
         margin-left: 0;
+    }
+    .searchResults_div {
+        margin: 0 auto 10px auto;
     }
 }
 

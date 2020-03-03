@@ -50,9 +50,10 @@ div{
     display: flex;
     align-items: center;
     height: auto;
-    min-height: 60vh;
+    min-height: 80vh;
     width: 100%;
     max-width: 100%;
+    justify-content: center;
   }
   .navApp {
    /*  position: sticky; */
@@ -61,6 +62,8 @@ div{
     height: auto; 
   }
   .footerApp {
+    box-sizing: border-box;
+    min-height: 20%;
     height: auto;
     width: 100%;
   }
