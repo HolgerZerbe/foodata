@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 app.use(express.json());
 app.use('/', express.static('public'));
 
+const cors = require('cors');
+app.use(cors());
+
 require('dotenv').config();
 
 const Product = require('./Product')
