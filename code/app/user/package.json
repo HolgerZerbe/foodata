@@ -13,7 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.8.11",
+    "mongoose": "^8.8.3",
     "nodemon": "^2.0.2",
     "quagga": "^0.12.1",
     "react": "^16.12.0",
